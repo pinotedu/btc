@@ -254,6 +254,178 @@
   .qty-quick button{flex:1;background:var(--bg-soft);border:1px solid var(--border);color:var(--text-dim);padding:6px 4px;border-radius:6px;font-family:'JetBrains Mono';font-size:11px;font-weight:600;cursor:pointer;transition:all .15s;letter-spacing:.04em}
   .qty-quick button:hover{color:var(--orange);border-color:rgba(247,147,26,.4);background:rgba(247,147,26,.06)}
 
+  /* ==== HELP / TUTORIAL ==== */
+  .help-fab{position:fixed;bottom:20px;right:20px;width:44px;height:44px;border-radius:50%;background:var(--orange);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(247,147,26,.4);z-index:40;transition:transform .15s}
+  .help-fab:hover{transform:scale(1.08)}
+  .help-fab svg{width:20px;height:20px}
+
+  .help-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);z-index:1080;align-items:center;justify-content:center;padding:30px}
+  .help-modal.show{display:flex}
+  .help-content{background:var(--panel);border:1px solid var(--border);border-radius:14px;width:100%;max-width:680px;max-height:88vh;overflow-y:auto;padding:32px;position:relative;box-shadow:var(--shadow)}
+  .help-close{position:absolute;top:14px;right:14px;width:32px;height:32px;background:var(--bg-soft);border:1px solid var(--border);border-radius:8px;color:var(--text-dim);cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .help-close:hover{color:var(--red);border-color:var(--red)}
+  .help-close svg{width:15px;height:15px}
+  .help-hero{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+  .help-hero-icon{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--orange),#d77a14);color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:bold;flex-shrink:0}
+  .help-hero-text h2{font-family:'Bricolage Grotesque';font-weight:700;font-size:22px;margin:0}
+  .help-hero-text .sub{color:var(--text-mute);font-size:13px;margin-top:2px}
+  .help-section{margin-top:22px}
+  .help-section h3{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-mute);margin:0 0 10px}
+  .help-card{background:var(--bg-soft);border:1px solid var(--border-soft);border-radius:10px;padding:14px;display:flex;gap:12px;margin-bottom:8px}
+  .help-card svg{width:18px;height:18px;color:var(--orange);flex-shrink:0;margin-top:1px}
+  .help-card .body{flex:1}
+  .help-card .body strong{display:block;margin-bottom:3px;font-size:13.5px}
+  .help-card .body div{color:var(--text-dim);font-size:12.5px;line-height:1.5}
+  [data-theme="light"] .help-card{background:#f6f8fa;border-color:#d0d7de}
+  [data-theme="light"] .help-content{background:#fff}
+
+  /* ==== SETTINGS TABS ==== */
+  .settings-tabs{display:flex;gap:4px;background:var(--bg-soft);border:1px solid var(--border);padding:4px;border-radius:10px;margin-bottom:20px;flex-wrap:wrap}
+  .settings-tab{background:transparent;border:none;color:var(--text-mute);padding:8px 16px;border-radius:7px;font-weight:600;font-size:13px;cursor:pointer;font-family:inherit;transition:all .15s;display:flex;align-items:center;gap:7px}
+  .settings-tab svg{width:14px;height:14px}
+  .settings-tab:hover{color:var(--text-dim)}
+  .settings-tab.active{background:var(--panel);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+  [data-theme="light"] .settings-tabs{background:#f6f8fa;border-color:#d0d7de}
+  [data-theme="light"] .settings-tab.active{background:#fff;color:#1f2328}
+  .settings-panel{display:none}
+  .settings-panel.active{display:block}
+
+  /* ==== LIGHT THEME ==== */
+  [data-theme="light"]{
+    --bg:#f6f8fa;--bg-soft:#ffffff;--panel:#ffffff;--border:#d0d7de;--border-soft:#d8dee4;
+    --text:#1f2328;--text-dim:#424a53;--text-mute:#656d76;
+    --orange-soft:rgba(247,147,26,.1);--green-soft:rgba(22,199,132,.1);--red-soft:rgba(234,57,67,.08);--purple-soft:rgba(168,85,247,.1);
+    --shadow:0 1px 0 rgba(31,35,40,.04),0 1px 3px rgba(31,35,40,.08);
+  }
+  /* Sidebar light: white bg, dark text */
+  [data-theme="light"] .sidebar{background:#ffffff;border-right:1px solid #d0d7de}
+  [data-theme="light"] .logo-icon{background:linear-gradient(135deg,#f7931a,#e8850f);color:#fff}
+  [data-theme="light"] .logo-text{color:#1f2328}
+  [data-theme="light"] .logo-sub{color:#656d76}
+  [data-theme="light"] .nav-item{color:#424a53}
+  [data-theme="light"] .nav-item:hover{color:#1f2328;background:#f6f8fa}
+  [data-theme="light"] .nav-item.active{background:rgba(247,147,26,.1);color:#9a3412;border-left-color:#f7931a}
+  [data-theme="light"] .nav-item svg{color:#656d76}
+  [data-theme="light"] .nav-item.active svg{color:#f7931a}
+  [data-theme="light"] .sidebar-foot{border-top-color:#d0d7de}
+  [data-theme="light"] .quote-mini{background:#f6f8fa;border-color:#d0d7de}
+  [data-theme="light"] .quote-mini-value{color:#9a3412}
+  [data-theme="light"] .user-box{background:#f6f8fa;border-color:#d0d7de}
+  [data-theme="light"] .user-avatar{background:linear-gradient(135deg,#f7931a,#e8850f)}
+  [data-theme="light"] .user-name{color:#1f2328}
+  [data-theme="light"] .user-role{color:#656d76}
+  [data-theme="light"] .logout-btn{border-color:#d0d7de;color:#656d76;background:#fff}
+  [data-theme="light"] .logout-btn:hover{color:#cf222e;border-color:#cf222e}
+  [data-theme="light"] .toggle-switch{background:#d0d7de;border-color:#c0c8d0}
+  [data-theme="light"] .toggle-switch::after{background:#656d76}
+  [data-theme="light"] .toggle-switch.on{background:rgba(247,147,26,.2)}
+  [data-theme="light"] .sidebar-controls{color:#424a53}
+  /* Main content light */
+  [data-theme="light"] .login-screen{background:#f6f8fa}
+  [data-theme="light"] .login-box{background:#fff;border-color:#d0d7de;box-shadow:var(--shadow)}
+  [data-theme="light"] .modal-bg{background:rgba(31,35,40,.5)}
+  [data-theme="light"] .modal{background:#fff;border-color:#d0d7de;box-shadow:0 8px 24px rgba(31,35,40,.15)}
+  [data-theme="light"] .widget{border-color:#d0d7de;box-shadow:0 1px 0 rgba(31,35,40,.04)}
+  [data-theme="light"] .widget.accent{background:linear-gradient(135deg,#fff,rgba(247,147,26,.04));border-color:rgba(247,147,26,.35)}
+  [data-theme="light"] .edit-toolbar{background:rgba(247,147,26,.08);border-color:rgba(247,147,26,.3)}
+  [data-theme="light"] .alert-box{background:rgba(22,199,132,.05);border-color:rgba(22,199,132,.2);color:#1f2328}
+  [data-theme="light"] .alert-box.warn{background:rgba(234,57,67,.04);border-color:rgba(234,57,67,.15);color:#1f2328}
+  [data-theme="light"] input,[data-theme="light"] select,[data-theme="light"] textarea{background:#f6f8fa;border-color:#d0d7de;color:#1f2328}
+  [data-theme="light"] input:focus,[data-theme="light"] select:focus,[data-theme="light"] textarea:focus{border-color:#f7931a;box-shadow:0 0 0 3px rgba(247,147,26,.12);background:#fff}
+  [data-theme="light"] .quote-bar{background:#fff;border-color:#d0d7de;box-shadow:var(--shadow)}
+  [data-theme="light"] .quote-input{background:#f6f8fa;border-color:#d0d7de}
+  [data-theme="light"] .fiat-btn{background:#f6f8fa;border-color:#d0d7de;color:#1f2328}
+  [data-theme="light"] .fiat-dropdown{background:#fff;border-color:#d0d7de;box-shadow:0 8px 24px rgba(31,35,40,.12)}
+  [data-theme="light"] .fiat-option:hover{background:#f6f8fa}
+  [data-theme="light"] .setting-block{background:#fff;border-color:#d0d7de}
+  [data-theme="light"] .section{background:#fff;border-color:#d0d7de;box-shadow:var(--shadow)}
+  [data-theme="light"] .form-section{border-color:#d8dee4}
+  [data-theme="light"] .form-section-title{color:#656d76}
+  [data-theme="light"] .qstat,[data-theme="light"] .top-row,[data-theme="light"] .exchange-row,[data-theme="light"] .target-row{background:#f6f8fa;border-color:#d8dee4}
+  [data-theme="light"] .mini-op{border-color:#d8dee4}
+  [data-theme="light"] table th{background:#f6f8fa;color:#424a53;border-color:#d0d7de}
+  [data-theme="light"] table td{border-color:#d8dee4;color:#1f2328}
+  [data-theme="light"] .op-preview{background:#f6f8fa;border-color:#d0d7de}
+  [data-theme="light"] .type-toggle{background:#f6f8fa;border-color:#d0d7de}
+  [data-theme="light"] .qty-quick button{background:#f6f8fa;border-color:#d0d7de;color:#424a53}
+  [data-theme="light"] .toast{background:#fff;border-color:#d0d7de;color:#1f2328;box-shadow:0 8px 24px rgba(31,35,40,.12)}
+  [data-theme="light"] .asset-tabs{background:#f6f8fa;border-color:#d0d7de}
+  [data-theme="light"] .asset-tab{color:#656d76}
+  [data-theme="light"] .asset-tab.active{background:#fff;color:#1f2328;box-shadow:0 1px 3px rgba(31,35,40,.08)}
+  [data-theme="light"] .btn-mini.ghost{color:#424a53;border-color:#d0d7de;background:#fff}
+  [data-theme="light"] .dashboard-edit-link{color:#656d76}
+  [data-theme="light"] .dashboard-edit-link:hover{color:#1f2328;background:#f6f8fa;border-color:#d0d7de}
+  [data-theme="light"] .widget-card{background:#f6f8fa;border-color:#d0d7de}
+  [data-theme="light"] .widget-card:hover:not(.added){background:rgba(247,147,26,.04);border-color:#f7931a}
+  [data-theme="light"] .widget-remove{background:#fff;border-color:#d0d7de;color:#656d76}
+  [data-theme="light"] .cards-empty,.w-stat .meta,[data-theme="light"] .field-hint{color:#656d76}
+  [data-theme="light"] .w-stat .value{color:#1f2328}
+  [data-theme="light"] .w-title{color:#1f2328}
+  [data-theme="light"] .heatmap .cell{background:#eaeef2;border-color:rgba(31,35,40,.04)}
+  [data-theme="light"] .pill.up{background:rgba(22,199,132,.12);color:#0d6939}
+  [data-theme="light"] .pill.down{background:rgba(234,57,67,.1);color:#a1111b}
+  [data-theme="light"] .btn.secondary{background:#f6f8fa;border-color:#d0d7de;color:#424a53}
+  [data-theme="light"] .btn.secondary:hover{background:#eaeef2}
+  [data-theme="light"] .btn.danger{background:#cf222e;color:#fff}
+  [data-theme="light"] .widget-remove{background:rgba(255,255,255,.95);border-color:#d0d7de;color:#656d76}
+  [data-theme="light"] .qty-quick button{background:#f6f8fa;border-color:#d0d7de;color:#424a53}
+  [data-theme="light"] .pill.up{background:rgba(22,199,132,.1);color:#0a6640}
+  [data-theme="light"] .pill.down{background:rgba(234,57,67,.08);color:#b91c28}
+  [data-theme="light"] .heatmap .cell{background:#eaeef2;border-color:rgba(31,35,40,.04)}
+  [data-theme="light"] .user-row{background:#f6f8fa;border-color:#d0d7de}
+
+  /* ==== TOGGLE SWITCH ==== */
+  .toggle-switch{position:relative;width:40px;height:22px;background:var(--bg-soft);border:1px solid rgba(255,255,255,.1);border-radius:11px;cursor:pointer;flex-shrink:0;transition:background .2s}
+  .toggle-switch::after{content:'';position:absolute;top:2px;left:2px;width:16px;height:16px;background:var(--text-mute);border-radius:50%;transition:transform .2s,background .2s}
+  .toggle-switch.on{background:rgba(247,147,26,.2);border-color:rgba(247,147,26,.4)}
+  .toggle-switch.on::after{transform:translateX(18px);background:var(--orange)}
+
+  /* ==== FIAT SELECTOR (header) ==== */
+  .fiat-selector{position:relative;display:inline-flex}
+  .fiat-btn{background:var(--bg-soft);border:1px solid var(--border);color:var(--text);padding:5px 10px;border-radius:6px;font-family:'JetBrains Mono';font-size:12px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:5px;transition:all .15s}
+  .fiat-btn:hover{border-color:var(--orange)}
+  .fiat-btn svg{width:10px;height:10px;color:var(--text-mute)}
+  .fiat-dropdown{display:none;position:absolute;top:100%;right:0;margin-top:4px;background:var(--panel);border:1px solid var(--border);border-radius:8px;box-shadow:var(--shadow);z-index:30;min-width:140px;overflow:hidden}
+  .fiat-dropdown.show{display:block}
+  .fiat-option{padding:8px 14px;font-size:12.5px;cursor:pointer;display:flex;align-items:center;gap:8px;transition:background .1s}
+  .fiat-option:hover{background:var(--bg-soft)}
+  .fiat-option.active{color:var(--orange);font-weight:600}
+
+  /* ==== FORM SECTIONS ==== */
+  .form-section{margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--border-soft)}
+  .form-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+  .form-section-title{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--text-mute);font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+  .form-section-title svg{width:13px;height:13px}
+
+  /* ==== ASSET DROPDOWN (substitui as tabs) ==== */
+  .asset-dropdown{position:relative;display:inline-block}
+  .asset-dd-btn{background:var(--bg-soft);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:10px;cursor:pointer;font-weight:600;font-size:13px;display:flex;align-items:center;gap:10px;transition:all .15s;font-family:inherit;min-width:200px}
+  .asset-dd-btn:hover{border-color:var(--orange)}
+  .asset-dd-btn .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+  .asset-dd-btn .asset-dd-name{flex:1;text-align:left}
+  .asset-dd-btn svg{color:var(--text-mute);margin-left:auto}
+  .asset-dd-list{display:none;position:absolute;top:100%;left:0;margin-top:4px;background:var(--panel);border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow);z-index:20;min-width:240px;max-height:300px;overflow-y:auto}
+  .asset-dd-list.show{display:block}
+  .asset-dd-item{display:flex;align-items:center;gap:10px;padding:9px 14px;font-size:13px;cursor:pointer;transition:background .1s}
+  .asset-dd-item:hover{background:var(--bg-soft)}
+  .asset-dd-item.active{color:var(--orange);font-weight:600}
+  .asset-dd-item .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+  [data-theme="light"] .asset-dd-btn{background:#f6f8fa;border-color:#d0d7de}
+  [data-theme="light"] .asset-dd-list{background:#fff;border-color:#d0d7de;box-shadow:0 8px 24px rgba(31,35,40,.12)}
+  [data-theme="light"] .asset-dd-item:hover{background:#f6f8fa}
+
+  /* ==== ASSET TABS antigo (mantém pro caso) ==== */
+  .asset-tabs{display:flex;gap:4px;background:var(--bg-soft);border:1px solid var(--border);padding:3px;border-radius:10px}
+  .asset-tab{background:transparent;border:none;color:var(--text-mute);padding:6px 14px;border-radius:7px;font-weight:600;font-size:12.5px;cursor:pointer;transition:all .15s;font-family:inherit;display:flex;align-items:center;gap:6px}
+  .asset-tab .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  .asset-tab.active{background:var(--panel);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+
+  /* ==== SIDEBAR TOGGLES ==== */
+  .sidebar-controls{display:flex;gap:6px;margin-top:10px}
+  .sidebar-control{flex:1;background:var(--bg-soft);border:1px solid rgba(255,255,255,.06);color:var(--text-dim);padding:6px 8px;border-radius:8px;font-size:10.5px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:4px;transition:all .15s;font-family:inherit;letter-spacing:.03em;text-transform:uppercase}
+  .sidebar-control:hover{background:rgba(255,255,255,.08);color:var(--text)}
+  .sidebar-control svg{width:12px;height:12px}
+
   /* ==== LOGIN ==== */
   .login-screen{position:fixed;inset:0;background:radial-gradient(circle at 20% 30%, rgba(247,147,26,.06), transparent 50%), var(--bg);display:flex;align-items:center;justify-content:center;z-index:1000;padding:20px}
   .login-box{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:32px;width:100%;max-width:380px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
@@ -295,11 +467,42 @@
   .dashboard-edit-link:hover{color:var(--text);background:var(--bg-soft);border-color:var(--border-soft)}
   .dashboard-edit-link svg{width:13px;height:13px}
 
+  /* ==== WIDGET EXPAND BUTTON ==== */
+  .widget-expand-btn{position:absolute;top:10px;right:10px;width:26px;height:26px;background:transparent;border:1px solid transparent;border-radius:6px;color:var(--text-mute);cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .15s;z-index:4}
+  .widget:hover .widget-expand-btn{opacity:1}
+  .widget-expand-btn:hover{background:var(--bg-soft);border-color:var(--border);color:var(--orange)}
+  .widget-expand-btn svg{width:13px;height:13px}
+  .widgets-grid.editing .widget-expand-btn{display:none}
+
+  /* ==== EXPANDED WIDGET MODAL ==== */
+  .expanded-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);z-index:1050;align-items:center;justify-content:center;padding:30px}
+  .expanded-modal.show{display:flex}
+  .expanded-content{background:var(--panel);border:1px solid var(--border);border-radius:14px;width:100%;max-width:1100px;max-height:90vh;overflow-y:auto;padding:28px;position:relative;box-shadow:var(--shadow)}
+  .expanded-close{position:absolute;top:14px;right:14px;width:34px;height:34px;background:var(--bg-soft);border:1px solid var(--border);border-radius:8px;color:var(--text-dim);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5}
+  .expanded-close:hover{color:var(--red);border-color:var(--red)}
+  .expanded-close svg{width:16px;height:16px}
+  .expanded-head{margin-bottom:18px;padding-right:50px}
+  .expanded-title{font-family:'Bricolage Grotesque';font-weight:600;font-size:22px;display:flex;align-items:center;gap:10px}
+  .expanded-title svg{width:20px;height:20px;color:var(--orange)}
+  .expanded-sub{color:var(--text-mute);font-size:13px;margin-top:4px}
+  .expanded-body{font-size:14px}
+
+  /* ==== PRICE CHART WIDGET ==== */
+  .pc-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+  .pc-price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .pc-price .big{font-family:'JetBrains Mono';font-weight:700;font-size:24px}
+  .pc-change{font-family:'JetBrains Mono';font-weight:600;font-size:13px;padding:3px 8px;border-radius:6px}
+  .pc-change.pos{background:var(--green-soft);color:var(--green)}
+  .pc-change.neg{background:var(--red-soft);color:var(--red)}
+  .pc-tf{display:flex;gap:3px;background:var(--bg-soft);border:1px solid var(--border);padding:3px;border-radius:8px}
+  .pc-tf button{background:transparent;border:none;color:var(--text-mute);padding:5px 11px;border-radius:5px;font-size:11.5px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s}
+  .pc-tf button.active{background:var(--panel);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.1)}
+  .pc-tf button:hover:not(.active){color:var(--text-dim)}
+  .pc-canvas-wrap{position:relative;height:260px}
+  .pc-canvas-wrap.large{height:480px}
+  .pc-loading{display:flex;align-items:center;justify-content:center;height:260px;color:var(--text-mute);font-size:12.5px}
+
   /* ==== WIDGETS SYSTEM ==== */
-  .dashboard-toolbar{display:flex;justify-content:flex-end;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px;min-height:32px}
-  .dashboard-toolbar > div{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-  .edit-actions{display:none !important}
-  .edit-actions.show{display:flex !important}
 
   .widgets-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;min-height:100px;position:relative}
   .widget{background:var(--panel);border:1px solid var(--border-soft);border-radius:var(--radius);padding:18px;position:relative;overflow:hidden;transition:transform .15s, border-color .15s}
@@ -309,6 +512,27 @@
   .widget.has-chart{display:flex;flex-direction:column}
   .widget .widget-chart-wrap{flex:1;position:relative;height:240px;margin-top:8px;min-height:240px}
   .widget.accent{background:linear-gradient(135deg,var(--panel),rgba(247,147,26,.05));border-color:rgba(247,147,26,.25)}
+
+  /* Widget expand */
+  .widget-expand{display:inline-flex;align-items:center;gap:4px;font-size:11.5px;color:var(--text-mute);cursor:pointer;margin-top:8px;transition:color .15s;background:none;border:none;font-family:inherit;padding:0}
+  .widget-expand:hover{color:var(--orange)}
+  .widget-expand svg{width:12px;height:12px;transition:transform .2s}
+  .widget-expand.open svg{transform:rotate(90deg)}
+  .widget-expandable{display:none;margin-top:10px;padding-top:10px;border-top:1px solid var(--border-soft)}
+  .widget-expandable.open{display:block}
+
+  /* Mini history */
+  .mini-op{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border-soft);font-size:12.5px}
+  .mini-op:last-child{border-bottom:none}
+  .mini-op-icon{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0}
+  .mini-op-icon.buy{background:var(--green-soft);color:var(--green)}
+  .mini-op-icon.sell{background:var(--red-soft);color:var(--red)}
+  .mini-op-icon.adjust{background:var(--purple-soft);color:var(--purple)}
+  .mini-op-body{flex:1;min-width:0}
+  .mini-op-top{display:flex;justify-content:space-between;gap:8px}
+  .mini-op-label{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .mini-op-val{font-family:'JetBrains Mono';font-weight:600;font-size:12px;flex-shrink:0}
+  .mini-op-sub{font-size:11px;color:var(--text-mute);margin-top:1px;font-family:'JetBrains Mono'}
 
   .widgets-grid.editing .widget{border-style:dashed;border-color:rgba(247,147,26,.5);cursor:move;user-select:none}
   .widget.dragging{opacity:.4;transform:scale(.97)}
@@ -492,9 +716,16 @@
     </nav>
     <div class="sidebar-foot">
       <div class="quote-mini">
-        <div class="quote-mini-label">BTC / BRL</div>
+        <div class="quote-mini-label" id="sidebar-quote-label">BTC / BRL</div>
         <div class="quote-mini-value mono" id="sidebar-quote">—</div>
         <div class="quote-mini-meta" id="sidebar-quote-time">Não definido</div>
+      </div>
+      <div class="sidebar-controls">
+        <div style="display:flex;align-items:center;gap:8px;flex:1;font-size:10.5px;color:var(--text-dim);font-weight:600;letter-spacing:.03em;text-transform:uppercase">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          Tema
+        </div>
+        <div class="toggle-switch" id="toggle-theme" title="Alternar tema"></div>
       </div>
       <div class="user-box">
         <div class="user-info">
@@ -522,12 +753,23 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
           </button>
           <h1 class="page-title">Dashboard</h1>
-          <div class="page-sub">Visão geral da sua posição em Bitcoin</div>
+          <div class="page-sub">Visão geral da sua posição</div>
+          <div class="asset-tabs" id="asset-tabs" style="margin-top:10px"></div>
         </div>
         <div class="quote-bar">
           <div>
-            <div class="quote-bar-label">Cotação BTC/BRL</div>
+            <div class="quote-bar-label" id="quote-label">Cotação BTC/BRL</div>
             <div class="quote-bar-val mono" id="quote-display">R$ —</div>
+          </div>
+          <div class="fiat-selector">
+            <button class="fiat-btn" id="fiat-btn">
+              <span id="fiat-label">BRL</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="fiat-dropdown" id="fiat-dropdown">
+              <div class="fiat-option active" data-currency="BRL">R$ BRL — Real Brasileiro</div>
+              <div class="fiat-option" data-currency="USD">$ USD — Dólar Americano</div>
+            </div>
           </div>
           <input type="text" inputmode="decimal" class="quote-input mono" id="quote-input" placeholder="Manual" autocomplete="off">
           <button class="btn-mini" id="fetch-quote" title="Buscar cotação atual via CoinGecko">
@@ -578,104 +820,126 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
           </button>
           <h1 class="page-title">Nova Operação</h1>
-          <div class="page-sub">Registre uma compra ou venda de Bitcoin</div>
+          <div class="page-sub">Registre uma compra, venda ou ajuste</div>
         </div>
       </div>
 
       <div class="section">
         <form id="op-form">
           <input type="hidden" id="op-id" value="">
-          <div class="form-grid">
-            <div class="field full">
-              <label>Tipo de operação</label>
-              <div class="type-toggle" id="type-toggle">
-                <button type="button" class="active buy" data-type="buy">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="7 13 12 8 17 13"/></svg>
-                  Compra
-                </button>
-                <button type="button" data-type="sell" class="sell">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="7 11 12 16 17 11"/></svg>
-                  Venda
-                </button>
-                <button type="button" data-type="adjust" class="adjust">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 3v5h-5M3 21v-5h5M21 8a9 9 0 0 0-15.5-3M3 16a9 9 0 0 0 15.5 3"/></svg>
-                  Ajuste
-                </button>
+
+          <div class="form-section">
+            <div class="form-section-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              Operação
+            </div>
+            <div class="form-grid">
+              <div class="field">
+                <label>Ativo</label>
+                <select id="op-asset"></select>
+              </div>
+              <div class="field">
+                <label>Data e hora</label>
+                <input type="datetime-local" id="op-date" required>
+              </div>
+              <div class="field">
+                <label>Exchange</label>
+                <input type="text" id="op-exchange" placeholder="Binance" value="Binance" list="exchange-list">
+                <datalist id="exchange-list">
+                  <option value="Binance">
+                  <option value="Mercado Bitcoin">
+                  <option value="Bitybank">
+                  <option value="Coinext">
+                  <option value="Foxbit">
+                  <option value="OKX">
+                  <option value="Bybit">
+                  <option value="P2P">
+                </datalist>
+              </div>
+              <div class="field full">
+                <label>Tipo</label>
+                <div class="type-toggle" id="type-toggle">
+                  <button type="button" class="active buy" data-type="buy">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="7 13 12 8 17 13"/></svg>
+                    Compra
+                  </button>
+                  <button type="button" data-type="sell" class="sell">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="7 11 12 16 17 11"/></svg>
+                    Venda
+                  </button>
+                  <button type="button" data-type="adjust" class="adjust">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 3v5h-5M3 21v-5h5M21 8a9 9 0 0 0-15.5-3M3 16a9 9 0 0 0 15.5 3"/></svg>
+                    Ajuste
+                  </button>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div class="field">
-              <label>Data e hora</label>
-              <input type="datetime-local" id="op-date" required>
+          <div class="form-section">
+            <div class="form-section-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.5 8h4a2.5 2.5 0 0 1 0 5h-4v-5zM9.5 13h5a2.5 2.5 0 0 1 0 5h-5v-5z"/></svg>
+              Valores
             </div>
-
-            <div class="field">
-              <label>Ativo</label>
-              <select id="op-asset">
-                <option value="BTC" selected>BTC - Bitcoin</option>
-              </select>
-              <div class="field-hint">Por ora apenas BTC</div>
-            </div>
-
-            <div class="field">
-              <label>Exchange / Corretora</label>
-              <input type="text" id="op-exchange" placeholder="Binance" value="Binance" list="exchange-list">
-              <datalist id="exchange-list">
-                <option value="Binance">
-                <option value="Mercado Bitcoin">
-                <option value="Bitybank">
-                <option value="Coinext">
-                <option value="Foxbit">
-                <option value="OKX">
-                <option value="Bybit">
-                <option value="P2P">
-              </datalist>
-            </div>
-
-            <div class="field">
-              <label>Quantidade de BTC</label>
-              <input type="text" inputmode="decimal" id="op-qty" placeholder="0,00000000" required autocomplete="off">
-              <div class="qty-quick" id="qty-quick" style="display:none">
-                <button type="button" data-pct="25">25%</button>
-                <button type="button" data-pct="50">50%</button>
-                <button type="button" data-pct="75">75%</button>
-                <button type="button" data-pct="100">MÁX</button>
+            <div class="form-grid">
+              <div class="field">
+                <label>Quantidade</label>
+                <input type="text" inputmode="decimal" id="op-qty" placeholder="0,00000000" required autocomplete="off">
+                <div class="qty-quick" id="qty-quick" style="display:none">
+                  <button type="button" data-pct="25">25%</button>
+                  <button type="button" data-pct="50">50%</button>
+                  <button type="button" data-pct="75">75%</button>
+                  <button type="button" data-pct="100">MÁX</button>
+                </div>
+                <div class="field-hint" id="qty-quick-hint" style="display:none">% do disponível em carteira</div>
+                <div class="field-hint" id="qty-adjust-hint" style="display:none;color:var(--purple)">Aceita negativo (use "-"). Ex: airdrop, taxa de rede, recompensa.</div>
               </div>
-              <div class="field-hint" id="qty-quick-hint" style="display:none">% do BTC disponível em carteira</div>
-              <div class="field-hint" id="qty-adjust-hint" style="display:none;color:var(--purple)">Aceita valor negativo (use o sinal "-" para saída de BTC). Ex: airdrop, taxa de rede, recompensa.</div>
+              <div class="field">
+                <label>Preço unitário (BRL)</label>
+                <input type="text" id="op-price" placeholder="0,00" readonly style="opacity:.7;cursor:default" autocomplete="off">
+                <div class="field-hint">Calculado automaticamente (total / quantidade)</div>
+              </div>
+              <div class="field">
+                <label>Valor total (BRL)</label>
+                <input type="text" inputmode="decimal" id="op-total" placeholder="0,00" autocomplete="off">
+                <div class="field-hint">Quanto você pagou / recebeu em reais</div>
+              </div>
             </div>
+          </div>
 
-            <div class="field">
-              <label>Preço unitário (BRL)</label>
-              <input type="text" inputmode="decimal" id="op-price" placeholder="0,00" required autocomplete="off">
+          <div class="form-section">
+            <div class="form-section-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              Taxas
             </div>
-
-            <div class="field">
-              <label>Valor total (BRL)</label>
-              <input type="text" inputmode="decimal" id="op-total" placeholder="auto" autocomplete="off">
-              <div class="field-hint">Em branco = qtd × preço</div>
+            <div class="form-grid">
+              <div class="field">
+                <label>Preset de taxa</label>
+                <select id="op-fee-preset">
+                  <option value="0.10">Spot regular — 0,10%</option>
+                  <option value="0.075" selected>Spot com BNB — 0,075%</option>
+                  <option value="0.04">Spot VIP1 — 0,04%</option>
+                  <option value="0">P2P — 0%</option>
+                  <option value="custom">Customizada (BRL)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Taxa (BRL)</label>
+                <input type="text" inputmode="decimal" id="op-fee" placeholder="0,00" autocomplete="off">
+                <div class="field-hint" id="fee-hint">Calculada do preset acima</div>
+              </div>
             </div>
+          </div>
 
-            <div class="field">
-              <label>Taxa Binance (preset)</label>
-              <select id="op-fee-preset">
-                <option value="0.10">Spot regular — 0,10%</option>
-                <option value="0.075" selected>Spot com BNB — 0,075%</option>
-                <option value="0.04">Spot VIP1 — 0,04%</option>
-                <option value="0">P2P — 0%</option>
-                <option value="custom">Customizada (BRL)</option>
-              </select>
+          <div class="form-section">
+            <div class="form-section-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="1"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+              Observações
             </div>
-
-            <div class="field">
-              <label>Taxa (BRL)</label>
-              <input type="text" inputmode="decimal" id="op-fee" placeholder="0,00" autocomplete="off">
-              <div class="field-hint" id="fee-hint">Calculada do preset acima</div>
-            </div>
-
-            <div class="field full">
-              <label>Observações</label>
-              <textarea id="op-notes" placeholder="Ex: aporte mensal, DCA semanal, realização parcial..."></textarea>
+            <div class="form-grid">
+              <div class="field full">
+                <textarea id="op-notes" placeholder="Ex: aporte mensal, DCA semanal, realização parcial..." rows="2"></textarea>
+              </div>
             </div>
           </div>
 
@@ -725,6 +989,10 @@
             <select id="f-type"><option value="">Todos</option><option value="buy">Compras</option><option value="sell">Vendas</option><option value="adjust">Ajustes</option></select>
           </div>
           <div class="field">
+            <label>Ativo</label>
+            <select id="f-asset"><option value="">Todos</option></select>
+          </div>
+          <div class="field">
             <label>Exchange</label>
             <select id="f-exchange"><option value="">Todas</option></select>
           </div>
@@ -745,6 +1013,7 @@
               <tr>
                 <th>Data</th>
                 <th>Tipo</th>
+                <th>Ativo</th>
                 <th>Exchange</th>
                 <th class="num">Qtd BTC</th>
                 <th class="num">Preço unit.</th>
@@ -866,116 +1135,152 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
           </button>
           <h1 class="page-title">Configurações</h1>
-          <div class="page-sub">Backup, alertas e preferências</div>
+          <div class="page-sub">Conta, dados e preferências</div>
         </div>
       </div>
 
-      <div class="settings-grid">
-        <div class="setting-block" style="grid-column:1/-1;border-color:rgba(247,147,26,.2);background:linear-gradient(135deg,var(--bg-soft),rgba(247,147,26,.04))">
-          <h4>Importar histórico via planilha</h4>
-          <p>Tem operações antigas registradas em algum lugar? Baixe o modelo Excel, preencha com suas compras e vendas, e suba aqui. As operações serão <strong>adicionadas</strong> ao seu histórico (sem apagar o que já existe).</p>
-          <div style="display:flex;gap:8px;flex-wrap:wrap">
-            <button class="btn secondary" id="download-template">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3"/></svg>
-              Baixar modelo (XLSX)
-            </button>
-            <label class="btn" style="cursor:pointer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
-              Importar planilha
-              <input type="file" accept=".xlsx,.xls,.csv" id="import-spreadsheet" style="display:none">
-            </label>
+      <div class="settings-tabs" id="settings-tabs">
+        <button class="settings-tab active" data-spanel="profile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Perfil
+        </button>
+        <button class="settings-tab" data-spanel="data">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+          Dados
+        </button>
+        <button class="settings-tab" data-spanel="prefs">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Preferências
+        </button>
+      </div>
+
+      <div class="settings-panel active" data-spanel="profile">
+        <div class="settings-grid">
+          <div class="setting-block" style="grid-column:1/-1">
+            <h4 style="margin:0 0 4px">Minha conta</h4>
+            <p>Altere seu nome de usuário ou senha. Cada usuário gerencia apenas a própria conta.</p>
+            <div id="account-info"></div>
           </div>
-        </div>
 
-        <div class="setting-block">
-          <h4>Backup (JSON)</h4>
-          <p>Exporte todos os seus dados em um arquivo JSON. Guarde em local seguro — recomenda-se backup periódico.</p>
-          <div style="display:flex;gap:8px;flex-wrap:wrap">
-            <button class="btn" id="export-json">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              Exportar JSON
-            </button>
-            <label class="btn secondary" style="cursor:pointer">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
-              Importar JSON
-              <input type="file" accept=".json" id="import-json" style="display:none">
-            </label>
-          </div>
-        </div>
-
-        <div class="setting-block">
-          <h4>Relatório completo</h4>
-          <p>Exporte uma planilha Excel com todas as operações, métricas e detalhamento de IR.</p>
-          <button class="btn" id="export-xlsx-full">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-            Exportar XLSX
-          </button>
-        </div>
-
-        <div class="setting-block">
-          <h4>Cotação manual padrão</h4>
-          <p>Valor que será carregado ao abrir o app caso não consiga buscar online.</p>
-          <div class="field">
-            <label>BTC/BRL</label>
-            <input type="text" inputmode="decimal" id="default-quote" placeholder="0,00" autocomplete="off">
-          </div>
-        </div>
-
-        <div class="setting-block">
-          <h4>Alertas de variação</h4>
-          <p>Mostrar alerta no Dashboard quando o lucro/prejuízo não realizado passar destes percentuais (use vírgula).</p>
-          <div style="display:flex;gap:10px">
-            <div class="field" style="flex:1">
-              <label>Lucro (%)</label>
-              <input type="number" id="alert-profit" step="1" placeholder="20" min="0">
-            </div>
-            <div class="field" style="flex:1">
-              <label>Prejuízo (%)</label>
-              <input type="number" id="alert-loss" step="1" placeholder="15" min="0">
+          <div class="setting-block">
+            <h4>Segurança da sessão</h4>
+            <p>Faz logout automático após período sem atividade.</p>
+            <div class="field">
+              <label>Deslogar após inatividade</label>
+              <select id="idle-timeout">
+                <option value="0">Nunca</option>
+                <option value="5">5 minutos</option>
+                <option value="15">15 minutos</option>
+                <option value="30">30 minutos</option>
+                <option value="60">1 hora</option>
+                <option value="240">4 horas</option>
+              </select>
+              <div class="field-hint">A sessão também é encerrada ao fechar o navegador.</div>
             </div>
           </div>
-        </div>
 
-        <div class="setting-block" id="install-block" style="grid-column:1/-1;border-color:rgba(247,147,26,.2);background:linear-gradient(135deg,var(--panel),rgba(247,147,26,.04))">
-          <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
-            <div style="display:flex;align-items:center;gap:12px;flex:1;min-width:280px">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" style="flex-shrink:0"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-              <div>
-                <h4 style="margin:0 0 2px">Instalar como app</h4>
-                <div style="font-size:12.5px;color:var(--text-dim)">Abrir o HOLD.tracker como aplicativo independente, sem barra do navegador.</div>
-              </div>
-            </div>
-            <div style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+          <div class="setting-block" id="install-block" style="border-color:rgba(247,147,26,.2);background:linear-gradient(135deg,var(--panel),rgba(247,147,26,.04))">
+            <h4>Instalar como app</h4>
+            <p>Abrir o HOLD.tracker como aplicativo independente, sem barra do navegador.</p>
+            <div style="display:flex;gap:8px;align-items:center">
               <button class="btn" id="install-btn" style="display:none">Instalar app</button>
               <span id="install-status" style="font-size:12.5px;color:var(--text-mute)"></span>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="setting-block" style="grid-column:1/-1">
-          <h4 style="margin:0 0 4px">Minha conta</h4>
-          <p>Altere seu nome de usuário ou senha. Cada usuário gerencia apenas a própria conta.</p>
-          <div id="account-info"></div>
-          <div class="field" style="margin-top:14px;max-width:280px">
-            <label>Deslogar após inatividade</label>
-            <select id="idle-timeout">
-              <option value="0">Nunca</option>
-              <option value="2">2 Minutos</option>
-              <option value="5">5 Minutos</option>
-              <option value="15">15 Minutos</option>
-              <option value="30">30 Minutos</option>
-              <option value="60">1 Hora</option>
-            </select>
+      <div class="settings-panel" data-spanel="data">
+        <div class="settings-grid">
+          <div class="setting-block" style="grid-column:1/-1;border-color:rgba(247,147,26,.2);background:linear-gradient(135deg,var(--bg-soft),rgba(247,147,26,.04))">
+            <h4>Importar histórico via planilha</h4>
+            <p>Tem operações antigas registradas em algum lugar? Baixe o modelo Excel, preencha com suas compras e vendas, e suba aqui. As operações serão <strong>adicionadas</strong> ao seu histórico (sem apagar o que já existe).</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn secondary" id="download-template">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3"/></svg>
+                Baixar modelo (XLSX)
+              </button>
+              <label class="btn" style="cursor:pointer">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                Importar planilha
+                <input type="file" accept=".xlsx,.xls,.csv" id="import-spreadsheet" style="display:none">
+              </label>
+            </div>
+          </div>
+
+          <div class="setting-block">
+            <h4>Backup (JSON)</h4>
+            <p>Exporte todos os seus dados em um arquivo JSON. Guarde em local seguro — recomenda-se backup periódico.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn" id="export-json">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                Exportar JSON
+              </button>
+              <label class="btn secondary" style="cursor:pointer">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                Importar JSON
+                <input type="file" accept=".json" id="import-json" style="display:none">
+              </label>
+            </div>
+          </div>
+
+          <div class="setting-block">
+            <h4>Relatório completo</h4>
+            <p>Exporte uma planilha Excel com todas as operações, métricas e detalhamento de IR.</p>
+            <button class="btn" id="export-xlsx-full">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+              Exportar XLSX
+            </button>
+          </div>
+
+          <div class="setting-block" style="grid-column:1/-1;border-color:rgba(234,57,67,.2);background:rgba(234,57,67,.04)">
+            <h4 style="color:var(--red)">Zona de perigo</h4>
+            <p>Apaga TODAS as operações e configurações deste usuário. Exporte um JSON antes, por favor.</p>
+            <button class="btn danger" id="wipe-all">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6M10 11v6M14 11v6M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+              Apagar dados deste usuário
+            </button>
           </div>
         </div>
+      </div>
 
-        <div class="setting-block" style="grid-column:1/-1;border-color:rgba(234,57,67,.2);background:rgba(234,57,67,.04)">
-          <h4 style="color:var(--red)">Zona de perigo</h4>
-          <p>Apaga TODAS as operações e configurações deste usuário. Exporte um JSON antes, por favor.</p>
-          <button class="btn danger" id="wipe-all">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6M10 11v6M14 11v6M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
-            Apagar dados deste usuário
-          </button>
+      <div class="settings-panel" data-spanel="prefs">
+        <div class="settings-grid">
+          <div class="setting-block">
+            <h4>Cotações</h4>
+            <p>Atualização automática de cotações de mercado via CoinGecko.</p>
+            <div class="field">
+              <label>Atualizar a cada</label>
+              <select id="quote-refresh">
+                <option value="0">Manual (desligado)</option>
+                <option value="1">1 minuto</option>
+                <option value="5" selected>5 minutos</option>
+                <option value="15">15 minutos</option>
+                <option value="30">30 minutos</option>
+                <option value="60">1 hora</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Cotação manual padrão (BRL)</label>
+              <input type="text" inputmode="decimal" id="default-quote" placeholder="0,00" autocomplete="off">
+              <div class="field-hint">Valor de fallback se a busca online falhar (apenas para o ativo selecionado no dashboard).</div>
+            </div>
+          </div>
+
+          <div class="setting-block">
+            <h4>Alertas de variação</h4>
+            <p>Mostrar alerta no Dashboard e enviar notificação push quando o lucro/prejuízo não realizado passar destes percentuais.</p>
+            <div style="display:flex;gap:10px">
+              <div class="field" style="flex:1">
+                <label>Lucro (%)</label>
+                <input type="number" id="alert-profit" step="1" placeholder="20" min="0">
+              </div>
+              <div class="field" style="flex:1">
+                <label>Prejuízo (%)</label>
+                <input type="number" id="alert-loss" step="1" placeholder="15" min="0">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1049,6 +1354,124 @@
     <div class="widget-picker" id="widget-picker"></div>
   </div>
 </div>
+
+<!-- Modal Widget Expandido -->
+<div class="expanded-modal" id="expanded-modal">
+  <div class="expanded-content">
+    <button class="expanded-close" id="expanded-close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="expanded-head">
+      <div class="expanded-title" id="expanded-title">Widget</div>
+      <div class="expanded-sub" id="expanded-sub"></div>
+    </div>
+    <div class="expanded-body" id="expanded-body"></div>
+  </div>
+</div>
+
+<!-- Modal de Ajuda / Onboarding -->
+<div class="help-modal" id="help-modal">
+  <div class="help-content">
+    <button class="help-close" id="help-close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="help-hero">
+      <div class="help-hero-icon">₿</div>
+      <div class="help-hero-text">
+        <h2 id="help-title">Bem-vindo ao HOLD.tracker</h2>
+        <div class="sub" id="help-sub">Um guia rápido pra você começar</div>
+      </div>
+    </div>
+
+    <div class="help-section">
+      <h3>Primeiros passos</h3>
+      <div class="help-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        <div class="body">
+          <strong>Registrar operações</strong>
+          <div>Use a aba <b>Nova Operação</b> pra cadastrar suas compras e vendas. Você só precisa preencher quantidade e valor total — o preço médio calcula sozinho.</div>
+        </div>
+      </div>
+      <div class="help-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+        <div class="body">
+          <strong>Tem histórico antigo? Importe via planilha</strong>
+          <div>Em <b>Configurações → Dados</b>, baixe o modelo XLSX, preencha com suas operações antigas e suba de volta. Adiciona tudo de uma vez sem apagar nada.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="help-section">
+      <h3>Dashboard customizável</h3>
+      <div class="help-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <div class="body">
+          <strong>Mude os widgets como quiser</strong>
+          <div>Lá embaixo do dashboard tem o link <b>"Personalizar dashboard"</b>. Você pode arrastar pra reordenar, remover ou adicionar novos widgets (tem mais de 25 disponíveis).</div>
+        </div>
+      </div>
+      <div class="help-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        <div class="body">
+          <strong>Expandir um widget</strong>
+          <div>Passe o mouse em cima de um widget e clique no ícone de expandir (canto superior direito). Ele abre maior pra você analisar melhor.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="help-section">
+      <h3>Múltiplas moedas</h3>
+      <div class="help-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <div class="body">
+          <strong>BTC, ETH e mais</strong>
+          <div>Você pode registrar operações em 12 criptomoedas diferentes. O dashboard mostra cada uma separada — escolha a moeda no seletor do topo. Só aparecem ali as moedas que você tem em carteira.</div>
+        </div>
+      </div>
+      <div class="help-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <div class="body">
+          <strong>Trocar entre Real e Dólar</strong>
+          <div>Ao lado da cotação tem um botão <b>BRL/USD</b>. Clique pra ver todos os valores do app convertidos pra dólar (cotação automática).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="help-section">
+      <h3>Dicas extras</h3>
+      <div class="help-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div class="body">
+          <strong>Cotação atualiza sozinha</strong>
+          <div>A cada 5 minutos as cotações são buscadas automaticamente. Você pode mudar esse intervalo em <b>Configurações → Preferências</b>.</div>
+        </div>
+      </div>
+      <div class="help-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <div class="body">
+          <strong>Tema claro ou escuro</strong>
+          <div>Na barra lateral tem um botão de tema. Sua escolha fica salva.</div>
+        </div>
+      </div>
+      <div class="help-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
+        <div class="body">
+          <strong>Precisa de ajuda novamente?</strong>
+          <div>Esse guia fica disponível pelo botão de <b>?</b> no canto inferior direito da tela. Pode revisitar quando quiser.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;text-align:center">
+      <button class="btn" id="help-got-it" style="min-width:180px">Entendi, vamos começar</button>
+    </div>
+  </div>
+</div>
+
+<!-- FAB de ajuda -->
+<button class="help-fab" id="help-fab" title="Ajuda" style="display:none">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
+</button>
 
 <script>
 /* ============================================
@@ -1367,58 +1790,118 @@ function userDataKey(){
 }
 
 /* ============================================
+   ASSETS CONFIG (extensível — pra nova moeda, criar entrada aqui)
+============================================ */
+const ASSETS = {
+  BTC: { name:'Bitcoin', symbol:'BTC', icon:'₿', decimals:8, coingeckoId:'bitcoin', color:'#f7931a' },
+  ETH: { name:'Ethereum', symbol:'ETH', icon:'Ξ', decimals:8, coingeckoId:'ethereum', color:'#627eea' },
+  BNB: { name:'BNB', symbol:'BNB', icon:'◆', decimals:8, coingeckoId:'binancecoin', color:'#f0b90b' },
+  SOL: { name:'Solana', symbol:'SOL', icon:'◎', decimals:8, coingeckoId:'solana', color:'#9945ff' },
+  XRP: { name:'XRP', symbol:'XRP', icon:'✕', decimals:6, coingeckoId:'ripple', color:'#23292f' },
+  ADA: { name:'Cardano', symbol:'ADA', icon:'₳', decimals:6, coingeckoId:'cardano', color:'#0033ad' },
+  DOGE:{ name:'Dogecoin', symbol:'DOGE', icon:'Ð', decimals:8, coingeckoId:'dogecoin', color:'#c2a633' },
+  AVAX:{ name:'Avalanche', symbol:'AVAX', icon:'▲', decimals:8, coingeckoId:'avalanche-2', color:'#e84142' },
+  MATIC:{name:'Polygon', symbol:'MATIC', icon:'⬡', decimals:8, coingeckoId:'matic-network', color:'#8247e5' },
+  DOT: { name:'Polkadot', symbol:'DOT', icon:'●', decimals:8, coingeckoId:'polkadot', color:'#e6007a' },
+  LINK:{ name:'Chainlink', symbol:'LINK', icon:'◈', decimals:8, coingeckoId:'chainlink', color:'#2a5ada' },
+  LTC: { name:'Litecoin', symbol:'LTC', icon:'Ł', decimals:8, coingeckoId:'litecoin', color:'#345d9d' },
+};
+const ASSET_LIST = Object.keys(ASSETS);
+
+/* ============================================
    STATE & STORAGE
 ============================================ */
 const state = {
   ops: [],
-  quote: 0,
-  quoteTime: null,
-  defaultQuote: 0,
+  quotes: {},           // {BTC:402000, ETH:12000}
+  quoteTimes: {},       // {BTC:'iso...', ETH:'iso...'}
+  defaultQuotes: {},    // {BTC:0, ETH:0}
+  activeAsset: 'BTC',
   alertProfit: 20,
   alertLoss: 15,
   currentTab: 'dashboard',
   opType: 'buy',
-  filters: {type:'', exchange:'', from:'', to:''},
+  filters: {type:'', exchange:'', from:'', to:'', asset:''},
   editingId: null,
   layout: null,
   targetProfit: 50,
   editingLayout: false,
-  balanceAdjust: 0,   // ajuste manual de saldo BTC
-  idleTimeout: 0,     // minutos de inatividade pra deslogar (0 = nunca)
+  balanceAdjust: 0,
+  idleTimeout: 0,
+  theme: 'dark',
+  displayCurrency: 'BRL',
+  usdRate: 0,
+  usdRateTime: null,
+  quoteRefreshMinutes: 5,
+  onboardingSeen: false,
 };
+
+// Atalhos de cotação (retorna cotação da moeda ativa ou especificada)
+function getQuote(asset){ return Number(state.quotes[asset||state.activeAsset]) || 0; }
+function setQuote(asset, price){
+  state.quotes[asset] = price;
+  state.quoteTimes[asset] = new Date().toISOString();
+}
+
+// Migração: converte dados antigos (state.quote → state.quotes.BTC)
+function migrateState(data){
+  if(data.quote !== undefined && !data.quotes){
+    data.quotes = {BTC: data.quote};
+    data.quoteTimes = {BTC: data.quoteTime || null};
+    data.defaultQuotes = {BTC: data.defaultQuote || 0};
+    delete data.quote; delete data.quoteTime; delete data.defaultQuote;
+  }
+  if(!data.activeAsset) data.activeAsset = 'BTC';
+  if(!data.theme) data.theme = 'dark';
+  if(!data.displayCurrency) data.displayCurrency = 'BRL';
+  if(!data.filters?.asset) { data.filters = {...(data.filters||{}), asset:''}; }
+  // ops antigos sem asset → BTC
+  if(data.ops) data.ops.forEach(o => { if(!o.asset) o.asset = 'BTC'; });
+  return data;
+}
 
 function loadState(){
   try{
     const raw = localStorage.getItem(userDataKey());
     if(!raw) return;
-    const data = JSON.parse(raw);
+    const data = migrateState(JSON.parse(raw));
     Object.assign(state, data);
-    if(!state.quote && state.defaultQuote) state.quote = state.defaultQuote;
+    // fallback default quotes
+    ASSET_LIST.forEach(a => {
+      if(!state.quotes[a] && state.defaultQuotes[a]) state.quotes[a] = state.defaultQuotes[a];
+    });
   }catch(e){console.error('Load err',e)}
 }
 function saveState(){
   try{
     localStorage.setItem(userDataKey(), JSON.stringify({
       ops:state.ops,
-      quote:state.quote,
-      quoteTime:state.quoteTime,
-      defaultQuote:state.defaultQuote,
+      quotes:state.quotes,
+      quoteTimes:state.quoteTimes,
+      defaultQuotes:state.defaultQuotes,
+      activeAsset:state.activeAsset,
       alertProfit:state.alertProfit,
       alertLoss:state.alertLoss,
       layout:state.layout,
       targetProfit:state.targetProfit,
       balanceAdjust:state.balanceAdjust,
       idleTimeout:state.idleTimeout,
+      theme:state.theme,
+      displayCurrency:state.displayCurrency,
+      usdRate:state.usdRate,
+      usdRateTime:state.usdRateTime,
+      quoteRefreshMinutes:state.quoteRefreshMinutes,
+      onboardingSeen:state.onboardingSeen,
     }));
   }catch(e){console.error('Save err',e)}
 }
 
 function resetStateBeforeLoad(){
-  // limpa state em memória ao trocar de usuário para não vazar dados
   state.ops = [];
-  state.quote = 0;
-  state.quoteTime = null;
-  state.defaultQuote = 0;
+  state.quotes = {};
+  state.quoteTimes = {};
+  state.defaultQuotes = {};
+  state.activeAsset = 'BTC';
   state.alertProfit = 20;
   state.alertLoss = 15;
   state.layout = null;
@@ -1429,14 +1912,36 @@ function resetStateBeforeLoad(){
   state.editingLayout = false;
   state.currentTab = 'dashboard';
   state.opType = 'buy';
-  state.filters = {type:'', exchange:'', from:'', to:''};
+  state.filters = {type:'', exchange:'', from:'', to:'', asset:''};
+  state.theme = 'dark';
+  state.displayCurrency = 'BRL';
+  state.usdRate = 0;
+  state.usdRateTime = null;
+  state.quoteRefreshMinutes = 5;
+  state.onboardingSeen = false;
 }
 
 /* ============================================
    HELPERS
 ============================================ */
-const fmtBRL = v => 'R$ ' + (Number(v)||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
-const fmtBTC = v => (Number(v)||0).toLocaleString('pt-BR',{minimumFractionDigits:8,maximumFractionDigits:8});
+// Formatação de moeda fiat (respeita displayCurrency)
+// Formatação de moeda (respeita displayCurrency)
+const fmtBRL = v => {
+  const n = Number(v)||0;
+  if(state.displayCurrency === 'USD' && state.usdRate > 0){
+    const usd = n / state.usdRate;
+    return '$ ' + usd.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+  }
+  return 'R$ ' + n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+};
+// Sempre BRL (pra IR e exports)
+const fmtBRLStrict = v => 'R$ ' + (Number(v)||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+// Formata qty de qualquer asset
+const fmtQty = (v, asset) => {
+  const dec = ASSETS[asset]?.decimals || 8;
+  return (Number(v)||0).toLocaleString('pt-BR',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+};
+const fmtBTC = v => fmtQty(v, 'BTC'); // atalho retrocompat
 const fmtPct = v => (Number(v)||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})+'%';
 const fmtDate = d => {
   const dt = new Date(d);
@@ -1449,27 +1954,90 @@ const uid = () => Date.now().toString(36)+Math.random().toString(36).slice(2,8);
 // "1500,50" "1.500,50" "1500.50" "1,500.50" "R$ 1.500,50" -> 1500.5
 const parseBR = (val) => {
   if(val === null || val === undefined) return 0;
-  let s = String(val).trim().replace(/R\$/gi,'').replace(/\s/g,'');
+  let s = String(val).trim().replace(/R\$|\$/gi,'').replace(/\s/g,'');
   if(!s) return 0;
   const hasComma = s.includes(',');
   const hasDot = s.includes('.');
   if(hasComma && hasDot){
-    // Decimal é o último símbolo que aparece
     if(s.lastIndexOf(',') > s.lastIndexOf('.')){
-      // BR: 1.500,50 -> 1500.50
       s = s.replace(/\./g,'').replace(',','.');
     } else {
-      // EN: 1,500.50 -> 1500.50
       s = s.replace(/,/g,'');
     }
   } else if(hasComma){
-    // só vírgula: trata como decimal BR
     s = s.replace(',','.');
+  } else if(hasDot){
+    // Só pontos: verificar se são separadores de milhar
+    // Se TODOS os grupos após o ponto têm exatamente 3 dígitos → milhar
+    // Ex: "350.000" → milhar, "1.500.000" → milhar, "350.5" → decimal
+    const parts = s.split('.');
+    const isThousands = parts.length > 1 && parts.slice(1).every(p => p.length === 3);
+    if(isThousands){
+      s = s.replace(/\./g,'');
+    }
+    // senão: deixa como decimal (ex: "0.5" → 0.5)
   }
-  // só ponto: deixa como está (já é decimal padrão)
   const n = parseFloat(s);
   return isNaN(n) ? 0 : n;
 };
+
+// Formatação em tempo real: aceita ponto ou vírgula como decimal, mostra em formato BR
+// ===== FORMATADORES DE CAMPO =====
+
+// BRL: máscara tipo banco — digita só números, vírgula fixa 2 casas do final
+function liveFmtBRL(input){
+  input.addEventListener('input', function(){
+    let digits = this.value.replace(/\D/g, '');
+    if(!digits){ this.value = ''; return; }
+    digits = digits.replace(/^0+/, '') || '0';
+    while(digits.length < 3) digits = '0' + digits;
+    const decPart = digits.slice(-2);
+    let intPart = digits.slice(0, -2).replace(/^0+/, '') || '0';
+    let formatted = '';
+    for(let i = intPart.length - 1, c = 0; i >= 0; i--, c++){
+      if(c > 0 && c % 3 === 0) formatted = '.' + formatted;
+      formatted = intPart[i] + formatted;
+    }
+    formatted += ',' + decPart;
+    this.value = formatted;
+    this.setSelectionRange(formatted.length, formatted.length);
+  });
+  // Ao sair do campo vazio → mostrar zero formatado
+  input.addEventListener('blur', function(){
+    if(!this.value.trim() || this.value === '0' || parseBR(this.value) === 0){
+      this.value = '';
+    }
+  });
+}
+
+// BTC/ETH: máscara auto-decimal 8 casas
+function liveFmtBTC(input){
+  input.addEventListener('input', function(){
+    let raw = this.value;
+    const neg = raw.startsWith('-');
+    if(neg) raw = raw.slice(1);
+    let digits = raw.replace(/\D/g, '');
+    if(!digits){ this.value = neg ? '-' : ''; return; }
+    digits = digits.replace(/^0+/, '') || '0';
+    while(digits.length < 9) digits = '0' + digits;
+    const decPart = digits.slice(-8);
+    let intPart = digits.slice(0, -8).replace(/^0+/, '') || '0';
+    let formatted = (neg ? '-' : '') + intPart + ',' + decPart;
+    this.value = formatted;
+    this.setSelectionRange(formatted.length, formatted.length);
+  });
+  // Ao sair do campo vazio → limpar
+  input.addEventListener('blur', function(){
+    if(!this.value.trim() || this.value === '0' || this.value === '-'){
+      this.value = '';
+    }
+  });
+}
+
+// Formatar número pra exibição em value/placeholder (formato BR)
+function fmtPlaceholderBR(n, dec=2){
+  return n.toLocaleString('pt-BR',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+}
 
 function toast(msg, type='success'){
   const t = document.getElementById('toast');
@@ -1498,17 +2066,19 @@ function confirmDialog(title, body, onYes){
    - Venda: diminui qtd. Custo da posição vendida = qty_sold * avgAtMoment.
    - Lucro da venda = (price - avgAtMoment) * qty - fee.
 ============================================ */
-function computePortfolio(){
-  const sortedOps = [...state.ops].sort((a,b)=> new Date(a.date) - new Date(b.date));
+function computePortfolio(asset){
+  asset = asset || state.activeAsset;
+  const allSorted = [...state.ops].sort((a,b)=> new Date(a.date) - new Date(b.date));
+  const sortedOps = allSorted.filter(o => (o.asset||'BTC') === asset);
 
   let qty = 0;
-  let costBasis = 0;     // custo da posição atual (qty * avg)
-  let totalBought = 0;   // bruto investido em compras
-  let totalSold = 0;     // bruto recebido em vendas
+  let costBasis = 0;
+  let totalBought = 0;
+  let totalSold = 0;
   let realizedProfit = 0;
   let salesCount = 0;
-  const sales = [];      // detalhe de cada venda
-  const timeline = [];   // ponto a ponto para gráficos
+  const sales = [];
+  const timeline = [];
 
   for(const op of sortedOps){
     const fee = Number(op.fee) || 0;
@@ -1518,52 +2088,34 @@ function computePortfolio(){
 
     if(op.type === 'buy'){
       qty += opQty;
-      costBasis += total + fee;  // taxa entra no custo
+      costBasis += total + fee;
       totalBought += total + fee;
     } else if(op.type === 'sell'){
       const avgAt = qty > 0 ? costBasis / qty : 0;
       const costSold = avgAt * opQty;
-      const proceeds = total - fee;  // taxa reduz o recebido
+      const proceeds = total - fee;
       const profit = proceeds - costSold;
-
       realizedProfit += profit;
-      totalSold += total;            // bruto antes da taxa pra fins de R$35k/mês
+      totalSold += total;
       salesCount++;
-      sales.push({
-        ...op,
-        avgAt,
-        costSold,
-        proceeds,
-        profit,
-        pctGain: avgAt > 0 ? ((price - avgAt)/avgAt)*100 : 0,
-      });
-
+      sales.push({...op, avgAt, costSold, proceeds, profit, pctGain: avgAt > 0 ? ((price - avgAt)/avgAt)*100 : 0});
       qty -= opQty;
       costBasis -= costSold;
       if(qty < 1e-12) {qty = 0; costBasis = 0;}
     } else if(op.type === 'adjust'){
-      // Ajuste: altera apenas qty (positivo entra, negativo sai)
-      // NÃO afeta costBasis nem totalBought/totalSold nem custo médio
       const newQty = qty + opQty;
       qty = Math.max(0, newQty);
       if(qty < 1e-12) qty = 0;
     }
 
-    timeline.push({
-      date: op.date,
-      qty,
-      avg: qty > 0 ? costBasis/qty : 0,
-      type: op.type,
-      total: total,
-    });
+    timeline.push({date:op.date, qty, avg: qty > 0 ? costBasis/qty : 0, type:op.type, total});
   }
 
-  const adjust = Number(state.balanceAdjust) || 0;
   const rawQty = qty;
-  const adjustedQty = Math.max(0, rawQty + adjust);
-  const finalQty = adjustedQty;
+  const finalQty = rawQty;
   const avg = finalQty > 0 ? costBasis/finalQty : 0;
-  const positionValue = finalQty * state.quote;
+  const quote = getQuote(asset);
+  const positionValue = finalQty * quote;
   const unrealized = positionValue - costBasis;
   const unrealizedPct = costBasis > 0 ? (unrealized/costBasis)*100 : 0;
   const totalResult = unrealized + realizedProfit;
@@ -1571,10 +2123,10 @@ function computePortfolio(){
   const totalPct = totalBought > 0 ? ((positionValue + totalSold - totalBought)/totalBought)*100 : 0;
 
   return {
-    qty: finalQty, rawQty, adjust,
+    asset, qty: finalQty, rawQty,
     avg, costBasis, totalBought, totalSold, realizedProfit, salesCount,
     positionValue, unrealized, unrealizedPct, totalResult, netInvested, totalPct,
-    sales, timeline, sortedOps,
+    sales, timeline, sortedOps, quote,
   };
 }
 
@@ -1587,9 +2139,18 @@ let charts = {};
    WIDGETS SYSTEM
 ============================================ */
 const DEFAULT_LAYOUT = [
-  'btc-balance','invested-net','avg-price','position-value',
-  'unrealized-pnl','realized-pnl','total-withdrawn','total-result',
-  'chart-position','chart-monthly','chart-bvs','chart-avg-price'
+  // Linha 1 — stats principais (4 small)
+  'btc-balance','invested-net','position-value','total-result',
+  // Linha 2 — pnl + ops
+  'unrealized-pnl','realized-pnl','avg-price','this-month',
+  // Painel grande de mercado
+  'price-chart',
+  // Linha de painéis úteis
+  'last-ops','scenarios',
+  // Gráficos do portfolio
+  'chart-position','chart-monthly','chart-bvs','chart-avg-price',
+  // Heatmap no fim
+  'calendar-heatmap'
 ];
 
 const SVG = {
@@ -1612,14 +2173,78 @@ const SVG = {
 };
 
 // Definição dos widgets disponíveis
+// Formatação adaptativa de preço (lida com moedas baratas tipo SHIB)
+function fmtPriceAdaptive(v){
+  const n = Number(v) || 0;
+  if(n === 0) return 'R$ 0,00';
+  const abs = Math.abs(n);
+  if(abs >= 1000) return 'R$ ' + n.toLocaleString('pt-BR',{maximumFractionDigits:0});
+  if(abs >= 1) return 'R$ ' + n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+  if(abs >= 0.01) return 'R$ ' + n.toLocaleString('pt-BR',{minimumFractionDigits:4,maximumFractionDigits:4});
+  if(abs >= 0.0001) return 'R$ ' + n.toLocaleString('pt-BR',{minimumFractionDigits:6,maximumFractionDigits:6});
+  return 'R$ ' + n.toLocaleString('pt-BR',{minimumFractionDigits:8,maximumFractionDigits:8});
+}
+
+// Renderiza o gráfico de preço (compartilhado entre widget normal e expanded)
+function renderPriceChart(data, coin, canvas, loading, chartKey, days, canvasId){
+  const points = data.prices.map(([ts, price]) => ({x: ts, y: price}));
+  const first = points[0].y;
+  const last = points[points.length-1].y;
+  const change = ((last - first)/first)*100;
+  document.getElementById(canvasId+'-price').textContent = fmtPriceAdaptive(last);
+  const changeEl = document.getElementById(canvasId+'-change');
+  changeEl.textContent = `${change>=0?'+':''}${fmtPct(change)}`;
+  changeEl.className = 'pc-change ' + (change >= 0 ? 'pos' : 'neg');
+  loading.style.display = 'none';
+  canvas.style.display = '';
+  const lineColor = change >= 0 ? chartColors.green : chartColors.red;
+  const fillColor = change >= 0 ? 'rgba(22,199,132,.1)' : 'rgba(234,57,67,.1)';
+  const d = days === 'max' ? 9999 : Number(days);
+  const xUnit = d <= 1 ? 'hour' : d <= 30 ? 'day' : d <= 90 ? 'week' : 'month';
+  // Eixo Y adaptativo: tira escala baseado nos valores
+  const maxY = Math.max(...points.map(p=>p.y));
+  const yFmt = v => {
+    if(maxY >= 1000) return 'R$ ' + (v/1000).toFixed(0) + 'k';
+    if(maxY >= 1) return 'R$ ' + v.toFixed(2);
+    if(maxY >= 0.01) return 'R$ ' + v.toFixed(4);
+    if(maxY >= 0.0001) return 'R$ ' + v.toFixed(6);
+    return 'R$ ' + v.toFixed(8);
+  };
+  charts[chartKey] = new Chart(canvas, {
+    type: 'line',
+    data: {datasets:[{
+      label: coin.sym,
+      data: points, borderColor: lineColor, backgroundColor: fillColor,
+      fill: true, tension: .15, pointRadius: 0, borderWidth: 2,
+    }]},
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: {display: false},
+        tooltip: {
+          callbacks: {
+            title: items => new Date(items[0].parsed.x).toLocaleString('pt-BR'),
+            label: c => `${coin.sym}: ${fmtPriceAdaptive(c.parsed.y)}`,
+          }
+        }
+      },
+      scales: {
+        x: {type: 'time', time: {unit: xUnit}, grid: {color: chartColors.grid}, ticks: {maxTicksLimit: 8}},
+        y: {grid: {color: chartColors.grid}, ticks: {callback: yFmt}}
+      },
+      interaction: {intersect: false, mode: 'index'},
+    }
+  });
+}
+
 const WIDGETS = {
   'btc-balance': {
-    title: 'BTC em carteira', desc: 'Quantidade total acumulada de BTC',
+    title: '${state.activeAsset} em carteira', desc: 'Quantidade total acumulada de BTC',
     size: 'small', type: 'stat', accent: true, icon: SVG.btc,
     render: (el, p) => {
       el.innerHTML = `<div class="w-stat">
-        <div class="label">${SVG.btc} BTC em carteira</div>
-        <div class="value">${fmtBTC(p.qty)}</div>
+        <div class="label">${SVG.btc} ${state.activeAsset} em carteira</div>
+        <div class="value">${fmtQty(p.qty, state.activeAsset)}</div>
         <div class="meta">≈ <span class="mono">${fmtBRL(p.positionValue)}</span></div>
       </div>`;
     }
@@ -1642,7 +2267,7 @@ const WIDGETS = {
       el.innerHTML = `<div class="w-stat">
         <div class="label">${SVG.trending} Preço médio</div>
         <div class="value">${fmtBRL(p.avg)}</div>
-        <div class="meta">${p.qty > 0 ? `Sobre ${fmtBTC(p.qty)} BTC` : '—'}</div>
+        <div class="meta">${p.qty > 0 ? `Sobre ${fmtQty(p.qty, state.activeAsset)} BTC` : '—'}</div>
       </div>`;
     }
   },
@@ -1718,7 +2343,7 @@ const WIDGETS = {
       el.innerHTML = `<div class="w-stat">
         <div class="label">${SVG.sats} Sats acumulados</div>
         <div class="value">${sats.toLocaleString('pt-BR')}</div>
-        <div class="meta">${fmtBTC(p.qty)} BTC</div>
+        <div class="meta">${fmtQty(p.qty, state.activeAsset)} BTC</div>
       </div>`;
     }
   },
@@ -1729,7 +2354,7 @@ const WIDGETS = {
       const totalSatsBought = p.sortedOps.filter(o=>o.type==='buy')
         .reduce((s,o)=>s+((Number(o.qty)||0)*1e8),0);
       const sperR = p.totalBought > 0 ? totalSatsBought / p.totalBought : 0;
-      const currentSperR = state.quote > 0 ? 1e8/state.quote : 0;
+      const currentSperR = p.quote > 0 ? 1e8/p.quote : 0;
       const diff = currentSperR && sperR ? ((sperR/currentSperR-1)*100) : 0;
       const diffCls = diff > 0 ? 'pos' : diff < 0 ? 'neg' : '';
       el.innerHTML = `<div class="w-stat">
@@ -1791,12 +2416,12 @@ const WIDGETS = {
     size: 'small', type: 'stat', icon: SVG.target,
     render: (el, p) => {
       const be = p.qty > 0 ? p.netInvested/p.qty : 0;
-      const needed = state.quote > 0 && be > 0 ? ((be/state.quote)-1)*100 : 0;
+      const needed = p.quote > 0 && be > 0 ? ((be/p.quote)-1)*100 : 0;
       const cls = needed > 0 ? 'neg' : 'pos';
       el.innerHTML = `<div class="w-stat">
         <div class="label">${SVG.target} Breakeven</div>
         <div class="value">${fmtBRL(be)}</div>
-        <div class="meta">${state.quote && be ? `BTC ${needed>0?'precisa subir':'já passou em'} <span class="${cls}">${fmtPct(Math.abs(needed))}</span>` : '—'}</div>
+        <div class="meta">${p.quote && be ? `BTC ${needed>0?'precisa subir':'já passou em'} <span class="${cls}">${fmtPct(Math.abs(needed))}</span>` : '—'}</div>
       </div>`;
     }
   },
@@ -1833,13 +2458,13 @@ const WIDGETS = {
     size: 'medium', type: 'panel', icon: SVG.up,
     render: (el, p) => {
       const buys = p.sortedOps.filter(o=>o.type==='buy');
-      if(buys.length === 0 || !state.quote){
-        el.innerHTML = `<div class="w-title">${SVG.up} Melhores compras</div><div style="color:var(--text-mute);padding:20px;text-align:center;font-size:12.5px">${!state.quote?'Defina a cotação atual':'Registre compras pra ver'}</div>`;
+      if(buys.length === 0 || !p.quote){
+        el.innerHTML = `<div class="w-title">${SVG.up} Melhores compras</div><div style="color:var(--text-mute);padding:20px;text-align:center;font-size:12.5px">${!p.quote?'Defina a cotação atual':'Registre compras pra ver'}</div>`;
         return;
       }
       const ranked = buys.map(o=>{
         const price = Number(o.price)||0;
-        const gain = price > 0 ? ((state.quote-price)/price)*100 : 0;
+        const gain = price > 0 ? ((p.quote-price)/price)*100 : 0;
         return {...o, gain};
       }).sort((a,b)=>b.gain-a.gain).slice(0,5);
 
@@ -1888,45 +2513,53 @@ const WIDGETS = {
     }
   },
   'target-calc': {
-    title: 'Calculadora de meta', desc: 'Quanto o BTC precisa subir para atingir X% de lucro',
+    title: 'Calculadora de meta', desc: 'Quanto o ativo precisa subir para atingir X% de lucro',
     size: 'medium', type: 'panel', icon: SVG.target,
     render: (el, p) => {
       const target = state.targetProfit || 50;
-      const targetPrice = p.avg * (1 + target/100);
-      const targetValue = p.qty * targetPrice;
-      const targetProfit = targetValue - p.netInvested;
-      const needsUp = state.quote > 0 ? ((targetPrice/state.quote)-1)*100 : 0;
-
       el.innerHTML = `<div class="w-title">${SVG.target} Calculadora de meta</div>
       <div class="target-row">
         <div class="label-l">Meta de lucro</div>
-        <input type="text" inputmode="decimal" id="target-input" value="${target}" style="width:70px"> %
+        <div style="display:flex;align-items:center;gap:6px"><input type="text" inputmode="decimal" id="target-input" value="${target}" style="width:70px"> %</div>
       </div>
       <div class="target-row">
-        <div class="label-l">Cotação BTC necessária</div>
-        <div class="label-r">${fmtBRL(targetPrice)}</div>
+        <div class="label-l">Cotação necessária</div>
+        <div class="label-r" id="tc-price">—</div>
       </div>
       <div class="target-row">
         <div class="label-l">Precisa subir</div>
-        <div class="label-r ${needsUp>=0?'neg':'pos'}">${state.quote ? (needsUp>=0?'+':'')+fmtPct(needsUp) : '—'}</div>
+        <div class="label-r" id="tc-needs">—</div>
       </div>
       <div class="target-row">
         <div class="label-l">Sua posição valeria</div>
-        <div class="label-r">${fmtBRL(targetValue)}</div>
+        <div class="label-r" id="tc-value">—</div>
       </div>
       <div class="target-row">
         <div class="label-l">Lucro absoluto</div>
-        <div class="label-r pos">+${fmtBRL(targetProfit)}</div>
+        <div class="label-r pos" id="tc-profit">—</div>
       </div>`;
+
+      const updateCalc = (t) => {
+        const targetPrice = p.avg * (1 + t/100);
+        const targetValue = p.qty * targetPrice;
+        const targetProfit = targetValue - p.netInvested;
+        const needsUp = p.quote > 0 ? ((targetPrice/p.quote)-1)*100 : 0;
+        el.querySelector('#tc-price').textContent = fmtBRL(targetPrice);
+        const needsEl = el.querySelector('#tc-needs');
+        needsEl.textContent = p.quote ? (needsUp>=0?'+':'')+fmtPct(needsUp) : '—';
+        needsEl.className = 'label-r ' + (needsUp>=0?'neg':'pos');
+        el.querySelector('#tc-value').textContent = fmtBRL(targetValue);
+        el.querySelector('#tc-profit').textContent = '+'+fmtBRL(targetProfit);
+      };
+      updateCalc(target);
+
       const input = el.querySelector('#target-input');
-      if(input){
-        input.oninput = e => {
-          state.targetProfit = parseBR(e.target.value) || 0;
-          saveState();
-          // re-render só esse widget
-          WIDGETS['target-calc'].render(el, p);
-        };
-      }
+      input.oninput = e => {
+        const v = parseBR(e.target.value) || 0;
+        state.targetProfit = v;
+        saveState();
+        updateCalc(v); // só atualiza os labels, não recria o input
+      };
     }
   },
   'calendar-heatmap': {
@@ -1995,6 +2628,379 @@ const WIDGETS = {
         <span style="margin-left:14px">Ajustes:</span>
         <span class="hcell a1"></span>
       </div>`;
+    }
+  },
+  // ====== NOVOS WIDGETS (EXPANDÍVEIS + HISTÓRICO) ======
+  'last-ops': {
+    title: 'Últimas operações', desc: 'Mini-histórico das transações mais recentes',
+    size: 'medium', type: 'panel', icon: SVG.list,
+    render: (el, p) => {
+      const ops = [...p.sortedOps].reverse().slice(0, 8);
+      if(ops.length === 0){
+        el.innerHTML = `<div class="w-title">${SVG.list} Últimas operações</div><div style="color:var(--text-mute);padding:20px;text-align:center;font-size:12.5px">Nenhuma operação registrada.</div>`;
+        return;
+      }
+      const arrows = {buy:'&#9650;',sell:'&#9660;',adjust:'&#8634;'};
+      const labels = {buy:'Compra',sell:'Venda',adjust:'Ajuste'};
+      el.innerHTML = `<div class="w-title">${SVG.list} Últimas operações</div>
+      <div>${ops.map(o=>{
+        const q = Number(o.qty)||0;
+        const isAdj = o.type==='adjust';
+        const valText = isAdj ? `${q>=0?'+':''}${fmtBTC(q)} BTC` : fmtBRL(Number(o.total)||0);
+        return `<div class="mini-op">
+          <div class="mini-op-icon ${o.type}">${arrows[o.type]||'?'}</div>
+          <div class="mini-op-body">
+            <div class="mini-op-top">
+              <div class="mini-op-label">${labels[o.type]} ${fmtBTC(Math.abs(q))} BTC</div>
+              <div class="mini-op-val ${isAdj?'':(o.type==='buy'?'':'pos')}">${valText}</div>
+            </div>
+            <div class="mini-op-sub">${fmtDateShort(o.date)} · ${escapeHtml(o.exchange||'—')}</div>
+          </div>
+        </div>`;
+      }).join('')}</div>
+      <button class="widget-expand" onclick="switchTab('history')">Ver histórico completo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg></button>`;
+    }
+  },
+  'scenarios': {
+    title: 'Cenários de preço', desc: 'Simule quanto valeria sua posição em diferentes cotações',
+    size: 'medium', type: 'panel', icon: SVG.target,
+    render: (el, p) => {
+      if(p.qty <= 0 || !p.quote){
+        el.innerHTML = `<div class="w-title">${SVG.target} Cenários de preço</div><div style="color:var(--text-mute);padding:20px;text-align:center;font-size:12.5px">${!p.quote?'Defina a cotação atual':'Registre operações pra ver'}</div>`;
+        return;
+      }
+      const scenarios = [-50,-30,-20,-10,0,10,20,30,50,100].map(pct => {
+        const price = p.quote * (1 + pct/100);
+        const val = p.qty * price;
+        const profit = val - p.netInvested;
+        return {pct, price, val, profit};
+      });
+      el.innerHTML = `<div class="w-title">${SVG.target} Cenários de preço</div>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:5px">
+      ${scenarios.map(s => {
+        const cls = s.pct === 0 ? 'color:var(--orange);font-weight:700' : (s.profit >= 0 ? 'color:var(--green)' : 'color:var(--red)');
+        const bg = s.pct === 0 ? 'background:rgba(247,147,26,.08);border-color:rgba(247,147,26,.2)' : '';
+        return `<div style="padding:6px 10px;background:var(--bg-soft);border:1px solid var(--border-soft);border-radius:6px;font-size:11.5px;${bg}">
+          <div style="display:flex;justify-content:space-between;gap:6px">
+            <span style="color:var(--text-mute)">${s.pct>=0?'+':''}${s.pct}%</span>
+            <span style="font-family:'JetBrains Mono';font-size:11px">${fmtBRL(s.price)}</span>
+          </div>
+          <div style="${cls};font-family:'JetBrains Mono';font-size:12px;font-weight:600;margin-top:2px">${s.profit>=0?'+':''}${fmtBRL(s.profit)}</div>
+        </div>`;
+      }).join('')}</div>`;
+    }
+  },
+  'fee-summary': {
+    title: 'Resumo de taxas', desc: 'Total gasto em taxas de corretagem e rede',
+    size: 'small', type: 'stat', icon: SVG.dollar,
+    render: (el, p) => {
+      const totalFees = p.sortedOps.reduce((s,o)=>s+(Number(o.fee)||0),0);
+      const buyFees = p.sortedOps.filter(o=>o.type==='buy').reduce((s,o)=>s+(Number(o.fee)||0),0);
+      const sellFees = p.sortedOps.filter(o=>o.type==='sell').reduce((s,o)=>s+(Number(o.fee)||0),0);
+      const pctOfInvested = p.totalBought > 0 ? (totalFees/p.totalBought)*100 : 0;
+      el.innerHTML = `<div class="w-stat">
+        <div class="label">${SVG.dollar} Total em taxas</div>
+        <div class="value neg">${fmtBRL(totalFees)}</div>
+        <div class="meta">${fmtPct(pctOfInvested)} do investido</div>
+      </div>`;
+    }
+  },
+  'monthly-avg': {
+    title: 'Aporte médio mensal', desc: 'Média mensal de aportes e variação',
+    size: 'small', type: 'stat', icon: SVG.chart,
+    render: (el, p) => {
+      const buys = p.sortedOps.filter(o=>o.type==='buy');
+      if(buys.length === 0){
+        el.innerHTML = `<div class="w-stat"><div class="label">${SVG.chart} Aporte médio mensal</div><div class="value">—</div></div>`;
+        return;
+      }
+      const months = {};
+      buys.forEach(o=>{
+        const k = (o.date||'').slice(0,7);
+        months[k] = (months[k]||0) + (Number(o.total)||0);
+      });
+      const vals = Object.values(months);
+      const avg = vals.reduce((a,b)=>a+b,0)/vals.length;
+      const lastMonth = Object.keys(months).sort().pop();
+      const lastVal = months[lastMonth]||0;
+      const diff = avg > 0 ? ((lastVal/avg)-1)*100 : 0;
+      el.innerHTML = `<div class="w-stat">
+        <div class="label">${SVG.chart} Aporte médio mensal</div>
+        <div class="value">${fmtBRL(avg)}</div>
+        <div class="meta">Último mês: ${fmtBRL(lastVal)} <span class="${diff>=0?'pos':'neg'}">(${diff>=0?'+':''}${fmtPct(diff)})</span></div>
+      </div>`;
+    }
+  },
+  'best-worst-month': {
+    title: 'Melhor/Pior mês', desc: 'Meses com maior e menor aporte',
+    size: 'medium', type: 'panel', icon: SVG.calendar,
+    render: (el, p) => {
+      const buys = p.sortedOps.filter(o=>o.type==='buy');
+      if(buys.length === 0){
+        el.innerHTML = `<div class="w-title">${SVG.calendar} Melhor/Pior mês</div><div style="color:var(--text-mute);padding:20px;text-align:center;font-size:12.5px">Registre compras pra ver</div>`;
+        return;
+      }
+      const months = {};
+      buys.forEach(o=>{
+        const k = (o.date||'').slice(0,7);
+        if(!months[k]) months[k] = {total:0, qty:0, count:0};
+        months[k].total += Number(o.total)||0;
+        months[k].qty += Number(o.qty)||0;
+        months[k].count++;
+      });
+      const sorted = Object.entries(months).sort((a,b)=>b[1].total-a[1].total);
+      const best = sorted[0];
+      const worst = sorted[sorted.length-1];
+      const fmtMonth = k => {
+        const [y,m] = k.split('-');
+        const names = ['','Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+        return `${names[+m]}/${y}`;
+      };
+      el.innerHTML = `<div class="w-title">${SVG.calendar} Melhor/Pior mês</div>
+      <div class="qstats">
+        <div class="qstat" style="border-color:rgba(22,199,132,.2)">
+          <div class="l" style="color:var(--green)">Maior aporte</div>
+          <div class="v">${fmtMonth(best[0])}</div>
+          <div style="font-family:'JetBrains Mono';font-size:12px;margin-top:2px">${fmtBRL(best[1].total)} · ${fmtBTC(best[1].qty)} BTC</div>
+          <div style="font-size:10.5px;color:var(--text-mute);margin-top:2px">${best[1].count} operação${best[1].count!==1?'ões':''}</div>
+        </div>
+        <div class="qstat" style="border-color:rgba(234,57,67,.2)">
+          <div class="l" style="color:var(--red)">Menor aporte</div>
+          <div class="v">${fmtMonth(worst[0])}</div>
+          <div style="font-family:'JetBrains Mono';font-size:12px;margin-top:2px">${fmtBRL(worst[1].total)} · ${fmtBTC(worst[1].qty)} BTC</div>
+          <div style="font-size:10.5px;color:var(--text-mute);margin-top:2px">${worst[1].count} operação${worst[1].count!==1?'ões':''}</div>
+        </div>
+      </div>`;
+    }
+  },
+  'portfolio-total': {
+    title: 'Posição total', desc: 'Valor combinado de todos os ativos',
+    size: 'medium', type: 'panel', accent: true, icon: SVG.layers,
+    render: (el) => {
+      let totalValue = 0, totalInvested = 0, totalRealized = 0;
+      const rows = [];
+      ASSET_LIST.forEach(a => {
+        const port = computePortfolio(a);
+        if(port.qty <= 0 && port.sortedOps.length === 0) return;
+        totalValue += port.positionValue;
+        totalInvested += port.netInvested;
+        totalRealized += port.realizedProfit;
+        const pct = port.netInvested > 0 ? port.unrealizedPct : 0;
+        rows.push({asset:a, color:ASSETS[a].color, icon:ASSETS[a].icon, qty:port.qty, value:port.positionValue, pct});
+      });
+      const totalResult = (totalValue - totalInvested) + totalRealized;
+      const totalPct = totalInvested > 0 ? ((totalResult)/totalInvested)*100 : 0;
+      if(rows.length === 0){
+        el.innerHTML = `<div class="w-title">${SVG.layers} Posição total</div><div style="color:var(--text-mute);padding:20px;text-align:center;font-size:12.5px">Registre operações pra ver.</div>`;
+        return;
+      }
+      el.innerHTML = `<div class="w-title">${SVG.layers} Posição total (todos os ativos)</div>
+      <div style="font-family:'JetBrains Mono';font-weight:700;font-size:28px;margin-bottom:4px">${fmtBRL(totalValue)}</div>
+      <div class="meta" style="margin-bottom:14px">
+        Investido: ${fmtBRL(totalInvested)} ·
+        Resultado: <span class="${totalResult>=0?'pos':'neg'}">${totalResult>=0?'+':''}${fmtBRL(totalResult)}</span>
+        <span class="pill ${totalPct>=0?'up':'down'}" style="margin-left:6px">${totalPct>=0?'+':''}${fmtPct(totalPct)}</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">${rows.map(r => {
+        const share = totalValue > 0 ? (r.value/totalValue*100) : 0;
+        return `<div style="display:flex;align-items:center;gap:10px">
+          <div style="width:28px;height:28px;border-radius:50%;background:${r.color}20;color:${r.color};display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0">${r.icon}</div>
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;justify-content:space-between;font-size:12.5px;font-weight:600"><span>${r.asset}</span><span class="mono">${fmtBRL(r.value)}</span></div>
+            <div style="height:4px;background:var(--bg-soft);border-radius:2px;overflow:hidden;margin-top:4px"><div style="height:100%;background:${r.color};width:${share.toFixed(1)}%;border-radius:2px"></div></div>
+          </div>
+          <div style="font-family:'JetBrains Mono';font-size:11px;color:var(--text-mute);width:40px;text-align:right">${share.toFixed(0)}%</div>
+        </div>`;
+      }).join('')}</div>`;
+    }
+  },
+  'dca-streak': {
+    title: 'Sequência DCA', desc: 'Meses consecutivos com pelo menos uma compra',
+    size: 'small', type: 'stat', icon: SVG.zap,
+    render: (el, p) => {
+      const buys = p.sortedOps.filter(o=>o.type==='buy');
+      if(buys.length === 0){
+        el.innerHTML = `<div class="w-stat"><div class="label">${SVG.zap} Sequência DCA</div><div class="value">—</div><div class="meta">Registre compras pra ver</div></div>`;
+        return;
+      }
+      const months = new Set(buys.map(o=>(o.date||'').slice(0,7)));
+      // Contar sequência atual retroativa
+      let streak = 0;
+      const now = new Date();
+      let cursor = new Date(now.getFullYear(), now.getMonth(), 1);
+      while(true){
+        const key = cursor.toISOString().slice(0,7);
+        if(months.has(key)){
+          streak++;
+          cursor.setMonth(cursor.getMonth() - 1);
+        } else break;
+      }
+      const best = (() => {
+        const sorted = [...months].sort();
+        let max = 0, cur = 0;
+        for(let i = 0; i < sorted.length; i++){
+          if(i === 0){ cur = 1; }
+          else {
+            const [py,pm] = sorted[i-1].split('-').map(Number);
+            const [cy,cm] = sorted[i].split('-').map(Number);
+            if((cy*12+cm) - (py*12+pm) === 1) cur++;
+            else cur = 1;
+          }
+          if(cur > max) max = cur;
+        }
+        return max;
+      })();
+      el.innerHTML = `<div class="w-stat">
+        <div class="label">${SVG.zap} Sequência DCA</div>
+        <div class="value">${streak} ${streak===1?'mês':'meses'}</div>
+        <div class="meta">Recorde: ${best} ${best===1?'mês':'meses'} seguidos</div>
+      </div>`;
+    }
+  },
+  'price-chart': {
+    title: 'Gráfico de preço (mercado)', desc: 'Cotação histórica com timeframes (1D, 7D, 30D, 1Y, ALL) — qualquer moeda',
+    size: 'large', type: 'panel', icon: SVG.chart,
+    render: (el, p, ctx) => {
+      const expanded = ctx?.expanded;
+      // Lista de moedas populares (CoinGecko IDs)
+      const COINS = [
+        {id:'bitcoin', sym:'BTC', name:'Bitcoin'},
+        {id:'ethereum', sym:'ETH', name:'Ethereum'},
+        {id:'binancecoin', sym:'BNB', name:'BNB'},
+        {id:'solana', sym:'SOL', name:'Solana'},
+        {id:'ripple', sym:'XRP', name:'XRP'},
+        {id:'cardano', sym:'ADA', name:'Cardano'},
+        {id:'dogecoin', sym:'DOGE', name:'Dogecoin'},
+        {id:'tron', sym:'TRX', name:'TRON'},
+        {id:'avalanche-2', sym:'AVAX', name:'Avalanche'},
+        {id:'chainlink', sym:'LINK', name:'Chainlink'},
+        {id:'polkadot', sym:'DOT', name:'Polkadot'},
+        {id:'matic-network', sym:'MATIC', name:'Polygon'},
+        {id:'litecoin', sym:'LTC', name:'Litecoin'},
+        {id:'shiba-inu', sym:'SHIB', name:'Shiba Inu'},
+        {id:'uniswap', sym:'UNI', name:'Uniswap'},
+        {id:'cosmos', sym:'ATOM', name:'Cosmos'},
+        {id:'stellar', sym:'XLM', name:'Stellar'},
+        {id:'monero', sym:'XMR', name:'Monero'},
+        {id:'aptos', sym:'APT', name:'Aptos'},
+        {id:'arbitrum', sym:'ARB', name:'Arbitrum'},
+      ];
+
+      const chartKey = expanded ? 'expanded_price-chart' : 'price-chart';
+      const canvasId = expanded ? 'pc-canvas-exp' : 'pc-canvas';
+      // Estado local persistido na própria definição do widget (pra lembrar entre re-renders)
+      if(!WIDGETS['price-chart']._state){
+        WIDGETS['price-chart']._state = { coinId: ASSETS[state.activeAsset]?.coingeckoId || 'bitcoin', days: '7' };
+      }
+      const ws = WIDGETS['price-chart']._state;
+
+      el.innerHTML = `
+        ${expanded ? '' : `<div class="w-title">${SVG.chart} Gráfico de preço</div>`}
+        <div class="pc-head">
+          <div class="pc-price">
+            <select id="${canvasId}-coin" style="background:var(--bg-soft);border:1px solid var(--border);color:var(--text);padding:5px 10px;border-radius:6px;font-weight:600;font-size:12.5px;cursor:pointer">
+              ${COINS.map(c => `<option value="${c.id}" ${c.id===ws.coinId?'selected':''}>${c.sym} — ${c.name}</option>`).join('')}
+            </select>
+            <span class="big" id="${canvasId}-price">—</span>
+            <span class="pc-change" id="${canvasId}-change">—</span>
+          </div>
+          <div class="pc-tf" id="${canvasId}-tf">
+            <button data-days="1" ${ws.days==='1'?'class="active"':''}>1D</button>
+            <button data-days="7" ${ws.days==='7'?'class="active"':''}>7D</button>
+            <button data-days="30" ${ws.days==='30'?'class="active"':''}>30D</button>
+            <button data-days="90" ${ws.days==='90'?'class="active"':''}>90D</button>
+            <button data-days="365" ${ws.days==='365'?'class="active"':''}>1A</button>
+            <button data-days="max" ${ws.days==='max'?'class="active"':''}>ALL</button>
+          </div>
+        </div>
+        <div class="pc-canvas-wrap ${expanded?'large':''}">
+          <div class="pc-loading" id="${canvasId}-loading">Carregando dados de mercado...</div>
+          <canvas id="${canvasId}" style="display:none"></canvas>
+        </div>
+        <div style="font-size:10.5px;color:var(--text-mute);text-align:right;margin-top:6px">Dados via CoinGecko</div>
+      `;
+
+      const loadData = async () => {
+        const loading = document.getElementById(canvasId+'-loading');
+        const canvas = document.getElementById(canvasId);
+        if(!loading || !canvas) return;
+        loading.style.display = 'flex';
+        loading.textContent = 'Carregando...';
+        canvas.style.display = 'none';
+        if(charts[chartKey]){ charts[chartKey].destroy(); delete charts[chartKey]; }
+
+        const coin = COINS.find(c => c.id === ws.coinId) || COINS[0];
+        const cacheKey = `pc_${coin.id}_${ws.days}`;
+
+        // Cache de 60s pra evitar rate limit ao trocar entre moedas
+        try {
+          const cached = sessionStorage.getItem(cacheKey);
+          if(cached){
+            const {data, ts} = JSON.parse(cached);
+            if(Date.now() - ts < 60000){
+              return renderPriceChart(data, coin, canvas, loading, chartKey, ws.days, canvasId);
+            }
+          }
+        } catch(e){}
+
+        // Função interna pra fazer fetch com retry
+        const tryFetch = async (attempt = 1) => {
+          try {
+            const url = `https://api.coingecko.com/api/v3/coins/${coin.id}/market_chart?vs_currency=brl&days=${ws.days}`;
+            const r = await fetch(url);
+            if(r.status === 429){
+              if(attempt < 3){
+                loading.textContent = `Aguardando API (tentativa ${attempt+1}/3)...`;
+                await new Promise(res => setTimeout(res, 2000 * attempt));
+                return tryFetch(attempt + 1);
+              }
+              throw new Error('Limite de requisições da API atingido. Aguarde 1 minuto.');
+            }
+            if(!r.ok) throw new Error('API retornou erro ' + r.status);
+            const data = await r.json();
+            if(!data.prices || data.prices.length === 0) throw new Error('Sem dados disponíveis');
+            try {
+              sessionStorage.setItem(cacheKey, JSON.stringify({data, ts: Date.now()}));
+            } catch(e){}
+            return renderPriceChart(data, coin, canvas, loading, chartKey, ws.days, canvasId);
+          } catch(err){
+            if(err.message && err.message.includes('Failed to fetch')){
+              if(attempt < 3){
+                loading.textContent = `Reconectando (tentativa ${attempt+1}/3)...`;
+                await new Promise(res => setTimeout(res, 1500 * attempt));
+                return tryFetch(attempt + 1);
+              }
+              throw new Error('Erro de conexão com a API. Verifique sua internet ou aguarde alguns segundos.');
+            }
+            throw err;
+          }
+        };
+
+        try {
+          await tryFetch();
+        } catch(err){
+          console.error('Price chart:', err);
+          loading.textContent = err.message || 'Não foi possível carregar.';
+        }
+      };
+
+      // Coin selector
+      document.getElementById(canvasId+'-coin').onchange = e => {
+        ws.coinId = e.target.value;
+        loadData();
+      };
+
+      // Timeframe buttons
+      document.querySelectorAll(`#${canvasId}-tf button`).forEach(b => {
+        b.onclick = () => {
+          document.querySelectorAll(`#${canvasId}-tf button`).forEach(x => x.classList.remove('active'));
+          b.classList.add('active');
+          ws.days = b.dataset.days;
+          loadData();
+        };
+      });
+
+      loadData();
     }
   },
   // ====== CHARTS ======
@@ -2096,6 +3102,7 @@ function getLayout(){
 
 function renderDashboard(){
   const p = computePortfolio();
+  renderAssetTabs();
   renderAlerts(p);
   renderWidgets(p);
 }
@@ -2133,12 +3140,22 @@ function renderWidgets(p){
     w.className = `widget size-${def.size} ${def.accent?'accent':''} ${def.type==='chart'?'has-chart':''}`;
     w.dataset.widgetId = id;
     w.draggable = state.editingLayout;
+    // Botão remover (modo edição)
     const removeBtn = document.createElement('button');
     removeBtn.className = 'widget-remove';
     removeBtn.innerHTML = '×';
     removeBtn.title = 'Remover';
     removeBtn.onclick = (e) => { e.stopPropagation(); removeWidget(id); };
     w.appendChild(removeBtn);
+    // Botão expandir (modo normal — aparece no hover)
+    if(def.expandable !== false){
+      const expandBtn = document.createElement('button');
+      expandBtn.className = 'widget-expand-btn';
+      expandBtn.title = 'Expandir';
+      expandBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>';
+      expandBtn.onclick = (e) => { e.stopPropagation(); openExpandedWidget(id); };
+      w.appendChild(expandBtn);
+    }
     const content = document.createElement('div');
     w.appendChild(content);
     grid.appendChild(w);
@@ -2276,23 +3293,83 @@ function setupLayoutControls(){
   document.getElementById('widget-modal').addEventListener('click', e => {
     if(e.target.id === 'widget-modal') closeWidgetPicker();
   });
+  // Modal de widget expandido
+  document.getElementById('expanded-close').onclick = closeExpandedWidget;
+  document.getElementById('expanded-modal').addEventListener('click', e => {
+    if(e.target.id === 'expanded-modal') closeExpandedWidget();
+  });
+  document.addEventListener('keydown', e => {
+    if(e.key === 'Escape' && document.getElementById('expanded-modal').classList.contains('show')){
+      closeExpandedWidget();
+    }
+  });
+}
+
+/* ============================================
+   EXPANDED WIDGET (popup modal)
+============================================ */
+let expandedWidgetId = null;
+
+function openExpandedWidget(id){
+  const def = WIDGETS[id];
+  if(!def) return;
+  expandedWidgetId = id;
+  document.getElementById('expanded-title').innerHTML = `${def.icon||''} ${def.title}`;
+  document.getElementById('expanded-sub').textContent = def.desc || '';
+  const body = document.getElementById('expanded-body');
+  body.innerHTML = '';
+
+  // Destruir chart com o mesmo key (se existir) pra evitar conflito
+  const chartKey = 'expanded_'+id;
+  if(charts[chartKey]){ charts[chartKey].destroy(); delete charts[chartKey]; }
+
+  document.getElementById('expanded-modal').classList.add('show');
+
+  // Renderizar — usa renderExpanded se existir, senão render normal com flag
+  const p = computePortfolio();
+  try {
+    if(def.renderExpanded){
+      def.renderExpanded(body, p);
+    } else {
+      def.render(body, p, {expanded:true});
+    }
+  } catch(err){
+    console.error('Expanded render', id, err);
+    body.innerHTML = '<div style="color:var(--red)">Erro ao renderizar widget expandido.</div>';
+  }
+}
+
+function closeExpandedWidget(){
+  document.getElementById('expanded-modal').classList.remove('show');
+  if(expandedWidgetId){
+    const chartKey = 'expanded_'+expandedWidgetId;
+    if(charts[chartKey]){ charts[chartKey].destroy(); delete charts[chartKey]; }
+  }
+  expandedWidgetId = null;
 }
 
 /* ============================================
    CHARTS (config compartilhada)
 ============================================ */
-const chartColors = {
-  text: '#8b95a8',
-  grid: 'rgba(255,255,255,.04)',
-  orange:'#f7931a',
-  green:'#16c784',
-  red:'#ea3943',
-};
+function getChartColors(){
+  const isLight = state.theme === 'light';
+  return {
+    text: isLight ? '#424a53' : '#8b95a8',
+    grid: isLight ? 'rgba(31,35,40,.06)' : 'rgba(255,255,255,.04)',
+    orange:'#f7931a', green:'#16c784', red:'#ea3943',
+  };
+}
+const chartColors = getChartColors();
 
-Chart.defaults.color = chartColors.text;
-Chart.defaults.font.family = "'Outfit', sans-serif";
-Chart.defaults.font.size = 11;
-Chart.defaults.borderColor = chartColors.grid;
+function applyChartDefaults(){
+  const c = getChartColors();
+  Object.assign(chartColors, c);
+  Chart.defaults.color = c.text;
+  Chart.defaults.font.family = "'Outfit', sans-serif";
+  Chart.defaults.font.size = 11;
+  Chart.defaults.borderColor = c.grid;
+}
+applyChartDefaults();
 
 function destroyChart(key){ if(charts[key]){ charts[key].destroy(); delete charts[key]; } }
 
@@ -2310,8 +3387,14 @@ function renderHistory(){
   const cur = exSel.value;
   exSel.innerHTML = '<option value="">Todas</option>' + exchanges.map(e=>`<option ${cur===e?'selected':''}>${e}</option>`).join('');
 
+  // asset filter options
+  const assetSel = document.getElementById('f-asset');
+  const curAsset = assetSel.value;
+  assetSel.innerHTML = '<option value="">Todos</option>' + ASSET_LIST.map(a=>`<option value="${a}" ${curAsset===a?'selected':''}>${a}</option>`).join('');
+
   let ops = [...state.ops].sort((a,b)=> new Date(b.date) - new Date(a.date));
   if(state.filters.type) ops = ops.filter(o=>o.type===state.filters.type);
+  if(state.filters.asset) ops = ops.filter(o=>(o.asset||'BTC')===state.filters.asset);
   if(state.filters.exchange) ops = ops.filter(o=>o.exchange===state.filters.exchange);
   if(state.filters.from) ops = ops.filter(o=>o.date >= state.filters.from);
   if(state.filters.to) ops = ops.filter(o=>o.date <= state.filters.to+'T23:59');
@@ -2321,24 +3404,29 @@ function renderHistory(){
   }
   table.style.display=''; empty.style.display='none';
 
-  // need running avg to compute profits — compute over all ops chronologically
+  // profits per asset (running avg per asset)
   const sortedAll = [...state.ops].sort((a,b)=> new Date(a.date) - new Date(b.date));
-  let qty=0, cost=0;
+  const assetState = {}; // {BTC: {qty,cost}, ETH: {qty,cost}}
   const profits = {};
   for(const op of sortedAll){
+    const a = op.asset || 'BTC';
+    if(!assetState[a]) assetState[a] = {qty:0, cost:0};
+    const s = assetState[a];
     const t = Number(op.total)||0; const f = Number(op.fee)||0; const q = Number(op.qty)||0;
-    if(op.type==='buy'){ qty+=q; cost+=t+f; }
-    else {
-      const avgAt = qty>0 ? cost/qty : 0;
-      const profit = (t - f) - avgAt*q;
-      profits[op.id] = profit;
-      qty-=q; cost-=avgAt*q;
-      if(qty<1e-12){qty=0;cost=0;}
+    if(op.type==='buy'){ s.qty+=q; s.cost+=t+f; }
+    else if(op.type==='sell'){
+      const avgAt = s.qty>0 ? s.cost/s.qty : 0;
+      profits[op.id] = (t - f) - avgAt*q;
+      s.qty-=q; s.cost-=avgAt*q;
+      if(s.qty<1e-12){s.qty=0;s.cost=0;}
+    } else if(op.type==='adjust'){
+      s.qty = Math.max(0, s.qty + q);
     }
   }
 
   tbody.innerHTML = ops.map(op=>{
     const t = Number(op.total)||0, q = Number(op.qty)||0, p = Number(op.price)||0, f = Number(op.fee)||0;
+    const a = op.asset || 'BTC';
     const isBuy = op.type==='buy';
     const isAdjust = op.type==='adjust';
     let profitCell = '<span class="ntr">—</span>';
@@ -2348,14 +3436,16 @@ function renderHistory(){
       profitCell = `<span class="${cls}">${pr>=0?'+':''}${fmtBRL(pr)}</span>`;
     }
     const typeLabel = isBuy ? 'Compra' : (isAdjust ? 'Ajuste' : 'Venda');
-    const qtyDisplay = isAdjust ? `<span style="color:var(--purple)">${q>=0?'+':''}${fmtBTC(q)}</span>` : fmtBTC(q);
+    const qtyDisplay = isAdjust ? `<span style="color:var(--purple)">${q>=0?'+':''}${fmtQty(q,a)}</span>` : fmtQty(Math.abs(q),a);
     const priceCell = isAdjust ? '<span class="ntr">—</span>' : fmtBRL(p);
     const totalCell = isAdjust ? '<span class="ntr">—</span>' : fmtBRL(t);
     const feeCell = isAdjust ? '<span class="ntr">—</span>' : fmtBRL(f);
     const notes = op.notes ? `<span title="${escapeHtml(op.notes)}">${escapeHtml(op.notes.slice(0,24))}${op.notes.length>24?'…':''}</span>` : '<span class="ntr">—</span>';
+    const assetBadge = `<span style="color:${ASSETS[a]?.color||'var(--text)'};font-weight:600;font-size:11px">${a}</span>`;
     return `<tr>
       <td>${fmtDate(op.date)}</td>
       <td><span class="op-badge ${op.type}">${typeLabel}</span></td>
+      <td>${assetBadge}</td>
       <td>${escapeHtml(op.exchange||'—')}</td>
       <td class="num">${qtyDisplay}</td>
       <td class="num">${priceCell}</td>
@@ -2400,7 +3490,13 @@ function setupForm(){
   // default date = now
   setDefaultDate();
 
-  const fields = ['op-date','op-qty','op-price','op-total','op-fee','op-fee-preset','op-exchange','op-notes'];
+  // Formatação em tempo real (DEVE ser registrada ANTES dos handlers de cálculo)
+  liveFmtBTC(document.getElementById('op-qty'));
+  liveFmtBRL(document.getElementById('op-total'));
+  liveFmtBRL(document.getElementById('op-fee'));
+
+  // Handlers de cálculo (rodam DEPOIS do formatador no mesmo input event)
+  const fields = ['op-date','op-qty','op-total','op-fee','op-fee-preset','op-exchange','op-notes'];
   fields.forEach(f=>{
     const el = document.getElementById(f);
     el.addEventListener('input', ()=>{
@@ -2411,6 +3507,16 @@ function setupForm(){
   document.getElementById('op-fee-preset').addEventListener('change', autoCompute);
 
   setupQtyQuick();
+
+  // Asset selector
+  document.getElementById('op-asset').onchange = e => {
+    state.activeAsset = e.target.value;
+    saveState();
+    refreshQuoteDisplay();
+    renderAssetTabs();
+    autoCompute();
+    updatePreview();
+  };
 
   document.getElementById('op-form').onsubmit = e=>{
     e.preventDefault();
@@ -2458,12 +3564,12 @@ function setupQtyQuick(){
         if(orig && orig.type==='sell') available += Number(orig.qty)||0;
       }
       if(available <= 0){
-        toast('Você não tem BTC em carteira para vender.','warn');
+        toast('Você não tem ${state.activeAsset} em carteira para vender.','warn');
         return;
       }
       const pct = Number(b.dataset.pct);
       const value = available * (pct/100);
-      document.getElementById('op-qty').value = value.toFixed(8);
+      document.getElementById('op-qty').value = fmtPlaceholderBR(value, 8);
       autoCompute();
       updatePreview();
     };
@@ -2477,15 +3583,22 @@ function setDefaultDate(){
 }
 
 function autoCompute(){
-  if(state.opType === 'adjust'){
-    return; // sem cálculo de total/taxa para ajuste
-  }
+  if(state.opType === 'adjust') return;
+
   const qty = parseBR(document.getElementById('op-qty').value);
-  const price = parseBR(document.getElementById('op-price').value);
   const totalEl = document.getElementById('op-total');
-  const totalManual = totalEl.value.trim() !== '';
-  const total = totalManual ? parseBR(totalEl.value) : qty*price;
-  if(!totalManual && qty && price) totalEl.placeholder = total.toFixed(2);
+  const total = parseBR(totalEl.value);
+  const priceEl = document.getElementById('op-price');
+
+  // Preço unitário = total / quantidade (auto-calculado)
+  if(qty > 0 && total > 0){
+    priceEl.value = fmtPlaceholderBR(total / qty);
+  } else {
+    priceEl.value = '';
+  }
+
+  // Valor efetivo do total pra calcular taxa
+  const effectiveTotal = total;
 
   // fee preset
   const preset = document.getElementById('op-fee-preset').value;
@@ -2493,8 +3606,8 @@ function autoCompute(){
   const hint = document.getElementById('fee-hint');
   if(preset !== 'custom'){
     const pct = parseFloat(preset);
-    const calc = total * (pct/100);
-    feeEl.value = calc ? calc.toFixed(2) : '';
+    const calc = effectiveTotal * (pct/100);
+    feeEl.value = calc ? fmtPlaceholderBR(calc) : '';
     feeEl.readOnly = true;
     hint.textContent = `${pct}% × total = ${fmtBRL(calc)}`;
   } else {
@@ -2526,7 +3639,7 @@ function updatePreview(){
     prev.innerHTML = `
       <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px">
         <div><div style="font-size:11px;color:var(--text-mute);text-transform:uppercase;letter-spacing:.1em">Ajuste</div>
-          <div style="margin-top:4px">Saldo atual: <strong class="mono">${fmtBTC(p.qty)} BTC</strong></div>
+          <div style="margin-top:4px">Saldo atual: <strong class="mono">${fmtQty(p.qty, state.activeAsset)} BTC</strong></div>
           <div>Ajuste: <strong class="mono" style="color:var(--purple)">${qty>=0?'+':''}${fmtBTC(qty)} BTC</strong></div>
           <div>Novo saldo: <strong class="mono">${fmtBTC(newQty)} BTC</strong></div>
         </div>
@@ -2538,13 +3651,12 @@ function updatePreview(){
   }
 
   const qty = parseBR(document.getElementById('op-qty').value);
-  const price = parseBR(document.getElementById('op-price').value);
-  const totalEl = document.getElementById('op-total');
-  const total = totalEl.value.trim() !== '' ? parseBR(totalEl.value) : qty*price;
+  const total = parseBR(document.getElementById('op-total').value);
   const fee = parseBR(document.getElementById('op-fee').value);
+  const price = qty > 0 ? total / qty : 0;
 
-  if(!qty || !price){
-    prev.innerHTML = 'Preencha quantidade e preço para ver o impacto desta operação.';
+  if(!qty || !total){
+    prev.innerHTML = 'Preencha quantidade e valor total para ver o impacto desta operação.';
     return;
   }
 
@@ -2573,7 +3685,7 @@ function updatePreview(){
     const pct = avgAt > 0 ? ((price-avgAt)/avgAt)*100 : 0;
     const cls = profit >= 0 ? 'pos' : 'neg';
     if(qty > p.qty){
-      html = `<div style="color:var(--red)">Quantidade vendida (${fmtBTC(qty)}) maior que a disponível (${fmtBTC(p.qty)}).</div>`;
+      html = `<div style="color:var(--red)">Quantidade vendida (${fmtBTC(qty)}) maior que a disponível (${fmtQty(p.qty, state.activeAsset)}).</div>`;
     } else {
       html = `
         <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px">
@@ -2616,7 +3728,7 @@ function saveOp(){
     const op = {
       id: state.editingId || uid(),
       type: 'adjust',
-      date, asset:'BTC', exchange, qty,
+      date, asset: document.getElementById('op-asset').value || state.activeAsset, exchange, qty,
       price: 0, total: 0, fee: 0, notes,
     };
     if(state.editingId){
@@ -2634,16 +3746,16 @@ function saveOp(){
     return;
   }
 
-  // Compra/Venda
+  // Compra/Venda — preço = total / qty
   const qty = parseBR(document.getElementById('op-qty').value);
-  const price = parseBR(document.getElementById('op-price').value);
-  const totalEl = document.getElementById('op-total');
-  const total = totalEl.value.trim() !== '' ? parseBR(totalEl.value) : qty*price;
+  const total = parseBR(document.getElementById('op-total').value);
   const fee = parseBR(document.getElementById('op-fee').value);
 
-  if(!date || !qty || qty<=0 || !price || price<=0){
-    toast('Preencha data, quantidade e preço corretamente.','error'); return;
+  if(!date || !qty || qty<=0 || !total || total<=0){
+    toast('Preencha data, quantidade e valor total.','error'); return;
   }
+
+  const price = total / qty;
 
   if(state.opType === 'sell'){
     const p = computePortfolio();
@@ -2660,7 +3772,7 @@ function saveOp(){
   const op = {
     id: state.editingId || uid(),
     type: state.opType,
-    date, asset:'BTC', exchange, qty, price, total, fee, notes,
+    date, asset: document.getElementById('op-asset').value || state.activeAsset, exchange, qty, price, total, fee, notes,
   };
 
   if(state.editingId){
@@ -2680,19 +3792,29 @@ function saveOp(){
 function resetForm(){
   state.editingId = null;
   document.getElementById('op-id').value = '';
-  document.getElementById('op-form').reset();
+  // Limpar campos numéricos explicitamente (form.reset não limpa valores setados por JS)
+  document.getElementById('op-qty').value = '';
+  document.getElementById('op-price').value = '';
+  document.getElementById('op-total').value = '';
+  document.getElementById('op-fee').value = '';
+  document.getElementById('op-notes').value = '';
+  // Resetar placeholders
+  document.getElementById('op-qty').placeholder = '0,00000000';
+  document.getElementById('op-price').value = '';
+  document.getElementById('op-total').placeholder = '0,00';
+  // Resetar selects e toggles
+  document.getElementById('op-asset').value = state.activeAsset;
   document.getElementById('op-exchange').value = 'Binance';
   document.getElementById('op-fee-preset').value = '0.075';
   setDefaultDate();
-  // reset type toggle
   document.querySelectorAll('#type-toggle button').forEach((b,i)=>{
     b.classList.toggle('active', i===0);
   });
   state.opType = 'buy';
   toggleQtyQuick();
   document.getElementById('submit-text').textContent = 'Registrar operação';
-  autoCompute();
-  updatePreview();
+  document.getElementById('fee-hint').textContent = 'Calculada do preset acima';
+  document.getElementById('op-preview').innerHTML = 'Preencha quantidade e preço para ver o impacto desta operação.';
 }
 
 function editOp(id){
@@ -2700,18 +3822,19 @@ function editOp(id){
   if(!op) return;
   state.editingId = id;
   document.getElementById('op-id').value = id;
+  document.getElementById('op-asset').value = op.asset || 'BTC';
   document.getElementById('op-date').value = op.date;
   if(op.type === 'adjust'){
     const q = Number(op.qty) || 0;
-    document.getElementById('op-qty').value = (q < 0 ? '-' : '') + Math.abs(q).toFixed(8);
+    document.getElementById('op-qty').value = (q < 0 ? '-' : '') + fmtPlaceholderBR(Math.abs(q), 8);
     document.getElementById('op-price').value = '';
     document.getElementById('op-total').value = '';
     document.getElementById('op-fee').value = '';
   } else {
-    document.getElementById('op-qty').value = op.qty;
-    document.getElementById('op-price').value = op.price;
-    document.getElementById('op-total').value = op.total;
-    document.getElementById('op-fee').value = op.fee || '';
+    document.getElementById('op-qty').value = fmtPlaceholderBR(Number(op.qty)||0, 8);
+    document.getElementById('op-total').value = fmtPlaceholderBR(Number(op.total)||0);
+    document.getElementById('op-fee').value = op.fee ? fmtPlaceholderBR(Number(op.fee)) : '';
+    // Preço auto-calcula via autoCompute
   }
   document.getElementById('op-fee-preset').value = 'custom';
   document.getElementById('op-fee').readOnly = false;
@@ -2725,6 +3848,7 @@ function editOp(id){
   document.getElementById('submit-text').textContent = 'Salvar alterações';
   document.getElementById('fee-hint').textContent = 'Edite manualmente';
   switchTab('new-op');
+  autoCompute();
   updatePreview();
 }
 
@@ -2861,17 +3985,26 @@ async function fetchQuote(){
   btn.disabled = true;
   btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/></svg> Buscando...';
   try{
-    const r = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=brl');
+    const ids = ASSET_LIST.map(a => ASSETS[a].coingeckoId).join(',');
+    const r = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=brl,usd`);
     if(!r.ok) throw new Error('Falha');
     const data = await r.json();
-    const q = data?.bitcoin?.brl;
-    if(!q) throw new Error('Sem dados');
-    state.quote = Number(q);
-    state.quoteTime = new Date().toISOString();
+    ASSET_LIST.forEach(a => {
+      const d = data[ASSETS[a].coingeckoId];
+      if(d?.brl){
+        setQuote(a, Number(d.brl));
+      }
+    });
+    // USD/BRL rate (derivar de BTC)
+    const btcData = data?.bitcoin;
+    if(btcData?.brl && btcData?.usd){
+      state.usdRate = btcData.brl / btcData.usd;
+      state.usdRateTime = new Date().toISOString();
+    }
     saveState();
     refreshQuoteDisplay();
     renderDashboard();
-    toast('Cotação atualizada via CoinGecko.');
+    toast('Cotações atualizadas via CoinGecko.');
   }catch(e){
     toast('Não foi possível buscar (CORS/conexão). Use o campo manual.','error');
   }finally{
@@ -2881,12 +4014,20 @@ async function fetchQuote(){
 }
 
 function refreshQuoteDisplay(){
-  document.getElementById('quote-display').textContent = state.quote > 0 ? fmtBRL(state.quote) : 'R$ —';
-  document.getElementById('sidebar-quote').textContent = state.quote > 0 ? fmtBRL(state.quote) : '—';
-  document.getElementById('sidebar-quote-time').textContent = state.quoteTime
-    ? 'Atualizado ' + new Date(state.quoteTime).toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})
+  const a = state.activeAsset;
+  const q = getQuote(a);
+  const t = state.quoteTimes[a];
+  const cur = state.displayCurrency;
+  const label = document.getElementById('quote-label');
+  if(label) label.textContent = `COTAÇÃO ${a}/${cur}`;
+  document.getElementById('quote-display').textContent = q > 0 ? fmtBRL(q) : '—';
+  const sideLabel = document.getElementById('sidebar-quote-label');
+  if(sideLabel) sideLabel.textContent = `${a} / ${cur}`;
+  document.getElementById('sidebar-quote').textContent = q > 0 ? fmtBRL(q) : '—';
+  document.getElementById('sidebar-quote-time').textContent = t
+    ? 'Atualizado ' + new Date(t).toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})
     : 'Não definido';
-  document.getElementById('quote-input').value = state.quote || '';
+  document.getElementById('quote-input').value = q ? fmtPlaceholderBR(q) : '';
 }
 
 /* ============================================
@@ -2898,7 +4039,7 @@ function exportJson(){
     exportedAt: new Date().toISOString(),
     ops: state.ops,
     settings: {
-      defaultQuote: state.defaultQuote,
+      defaultQuotes: state.defaultQuotes,
       alertProfit: state.alertProfit,
       alertLoss: state.alertLoss,
     }
@@ -2924,7 +4065,7 @@ function importJson(file){
         ()=>{
           state.ops = data.ops;
           if(data.settings){
-            state.defaultQuote = data.settings.defaultQuote || 0;
+            state.defaultQuotes = data.settings.defaultQuotes || {BTC: data.settings.defaultQuote || 0};
             state.alertProfit = data.settings.alertProfit ?? 20;
             state.alertLoss = data.settings.alertLoss ?? 15;
           }
@@ -2989,11 +4130,11 @@ function exportFullXlsx(){
   // Sheet 1: Resumo
   const summary = [
     ['Métrica','Valor'],
-    ['BTC em carteira', p.qty],
+    ['${state.activeAsset} em carteira', p.qty],
     ['Investido líquido (R$)', p.netInvested],
     ['Investido bruto (R$)', p.totalBought],
     ['Preço médio (R$)', p.avg],
-    ['Cotação atual (R$)', state.quote],
+    ['Cotação atual (R$)', getQuote()],
     ['Valor da posição (R$)', p.positionValue],
     ['Lucro não realizado (R$)', p.unrealized],
     ['Lucro não realizado (%)', p.unrealizedPct/100],
@@ -3180,6 +4321,7 @@ function importSpreadsheet(file){
               else if(c.includes('taxa') || c.includes('fee')) headerMap.fee = idx;
               else if(c.includes('exchange') || c.includes('corret')) headerMap.exchange = idx;
               else if(c.includes('obs') || c.includes('note')) headerMap.notes = idx;
+              else if(c.includes('ativo') || c.includes('asset') || c.includes('moeda') || c.includes('coin')) headerMap.asset = idx;
             });
             return;
           }
@@ -3214,7 +4356,8 @@ function importSpreadsheet(file){
           const exchange = String(row[headerMap.exchange]||'').trim() || 'Binance';
           const notes = String(row[headerMap.notes]||'').trim();
 
-          newOps.push({id: uid(), type, date: dateVal, asset:'BTC', exchange, qty, price, total, fee, notes});
+          const assetVal = headerMap.asset !== undefined ? String(row[headerMap.asset]||'').trim().toUpperCase() : state.activeAsset;
+          newOps.push({id: uid(), type, date: dateVal, asset: ASSETS[assetVal] ? assetVal : state.activeAsset, exchange, qty, price, total, fee, notes});
         } catch(err){
           errors.push(`Linha ${i+1}: ${err.message}`);
         }
@@ -3256,15 +4399,24 @@ function importSpreadsheet(file){
 function loadSettingsUI(){
   document.getElementById('alert-profit').value = state.alertProfit ?? 20;
   document.getElementById('alert-loss').value = state.alertLoss ?? 15;
-  document.getElementById('default-quote').value = state.defaultQuote || '';
+  const dq = state.defaultQuotes[state.activeAsset] || 0;
+  document.getElementById('default-quote').value = dq ? fmtPlaceholderBR(dq) : '';
   document.getElementById('idle-timeout').value = String(state.idleTimeout || 0);
+  document.getElementById('quote-refresh').value = String(state.quoteRefreshMinutes || 5);
   renderUsers();
 }
 
 function setupSettings(){
   document.getElementById('alert-profit').onchange = e=>{ state.alertProfit = Number(e.target.value)||0; saveState(); renderDashboard(); };
   document.getElementById('alert-loss').onchange = e=>{ state.alertLoss = Number(e.target.value)||0; saveState(); renderDashboard(); };
-  document.getElementById('default-quote').onchange = e=>{ state.defaultQuote = parseBR(e.target.value); saveState(); };
+  document.getElementById('default-quote').onchange = e=>{ state.defaultQuotes[state.activeAsset] = parseBR(e.target.value); saveState(); };
+  document.getElementById('quote-refresh').onchange = e => {
+    state.quoteRefreshMinutes = Number(e.target.value) || 0;
+    saveState();
+    startQuoteAutoRefresh();
+    const m = state.quoteRefreshMinutes;
+    toast(m > 0 ? `Cotações serão atualizadas a cada ${m < 60 ? m+' min' : (m/60)+'h'}.` : 'Auto-refresh desligado.');
+  };
   document.getElementById('idle-timeout').onchange = e=>{
     state.idleTimeout = Number(e.target.value) || 0;
     saveState();
@@ -3353,12 +4505,14 @@ function setupTabs(){
 ============================================ */
 function setupFilters(){
   document.getElementById('f-type').onchange = e=>{state.filters.type=e.target.value; renderHistory();};
+  document.getElementById('f-asset').onchange = e=>{state.filters.asset=e.target.value; renderHistory();};
   document.getElementById('f-exchange').onchange = e=>{state.filters.exchange=e.target.value; renderHistory();};
   document.getElementById('f-from').onchange = e=>{state.filters.from=e.target.value; renderHistory();};
   document.getElementById('f-to').onchange = e=>{state.filters.to=e.target.value; renderHistory();};
   document.getElementById('clear-filters').onclick = ()=>{
-    state.filters = {type:'',exchange:'',from:'',to:''};
+    state.filters = {type:'',exchange:'',from:'',to:'',asset:''};
     document.getElementById('f-type').value='';
+    document.getElementById('f-asset').value='';
     document.getElementById('f-exchange').value='';
     document.getElementById('f-from').value='';
     document.getElementById('f-to').value='';
@@ -3367,20 +4521,56 @@ function setupFilters(){
 }
 
 /* ============================================
+   QUOTE AUTO-REFRESH (every 5 min)
+============================================ */
+let quoteRefreshInterval = null;
+
+function startQuoteAutoRefresh(){
+  if(quoteRefreshInterval) clearInterval(quoteRefreshInterval);
+  const minutes = Number(state.quoteRefreshMinutes) || 5;
+  if(minutes <= 0) return; // 0 = desligado
+  quoteRefreshInterval = setInterval(async () => {
+    try{
+      const ids = ASSET_LIST.map(a => ASSETS[a].coingeckoId).join(',');
+      const r = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=brl,usd`);
+      if(!r.ok) return;
+      const data = await r.json();
+      ASSET_LIST.forEach(a => {
+        const d = data[ASSETS[a].coingeckoId];
+        if(d?.brl) setQuote(a, Number(d.brl));
+      });
+      const btcData = data?.bitcoin;
+      if(btcData?.brl && btcData?.usd){
+        state.usdRate = btcData.brl / btcData.usd;
+        state.usdRateTime = new Date().toISOString();
+      }
+      saveState();
+      refreshQuoteDisplay();
+      renderDashboard();
+    }catch(e){}
+  }, minutes * 60 * 1000);
+}
+
+/* ============================================
    QUOTE INPUT
 ============================================ */
 function setupQuote(){
   document.getElementById('fetch-quote').onclick = fetchQuote;
-  document.getElementById('quote-input').addEventListener('change', e=>{
+  const quoteEl = document.getElementById('quote-input');
+  quoteEl.dataset.dec = '2';
+  liveFmtBRL(quoteEl);
+  quoteEl.addEventListener('change', e=>{
     const v = parseBR(e.target.value);
     if(v > 0){
-      state.quote = v;
-      state.quoteTime = new Date().toISOString();
+      setQuote(state.activeAsset, v);
       saveState();
       refreshQuoteDisplay();
       renderDashboard();
     }
   });
+  const defQuoteEl = document.getElementById('default-quote');
+  defQuoteEl.dataset.dec = '2';
+  liveFmtBRL(defQuoteEl);
 }
 
 /* ============================================
@@ -3466,6 +4656,209 @@ function updateInstallUI(){
 }
 
 /* ============================================
+   ASSET TABS (dashboard + form)
+============================================ */
+// Retorna lista de ativos com operações registradas
+function getHeldAssets(){
+  const held = new Set();
+  state.ops.forEach(o => held.add(o.asset || 'BTC'));
+  // Sempre incluir o activeAsset (mesmo sem ops) pra não dar erro
+  held.add(state.activeAsset);
+  return [...held].filter(a => ASSETS[a]);
+}
+
+function renderAssetTabs(){
+  const tabs = document.getElementById('asset-tabs');
+  if(!tabs) return;
+  const held = getHeldAssets();
+  // Garante que activeAsset está em held; senão usa o primeiro
+  if(!held.includes(state.activeAsset)) state.activeAsset = held[0] || 'BTC';
+
+  const def = ASSETS[state.activeAsset];
+  tabs.innerHTML = `
+    <div class="asset-dropdown" id="asset-dd">
+      <button class="asset-dd-btn" id="asset-dd-btn" type="button">
+        <span class="dot" style="background:${def.color}"></span>
+        <span class="asset-dd-name">${def.symbol} — ${def.name}</span>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="asset-dd-list" id="asset-dd-list">
+        ${held.map(a => {
+          const ad = ASSETS[a];
+          return `<div class="asset-dd-item ${a===state.activeAsset?'active':''}" data-asset="${a}">
+            <span class="dot" style="background:${ad.color}"></span>
+            <span>${ad.symbol} — ${ad.name}</span>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>
+  `;
+  const dd = document.getElementById('asset-dd');
+  const btn = document.getElementById('asset-dd-btn');
+  const list = document.getElementById('asset-dd-list');
+  btn.onclick = (e) => { e.stopPropagation(); list.classList.toggle('show'); };
+  list.querySelectorAll('.asset-dd-item').forEach(it => {
+    it.onclick = () => {
+      state.activeAsset = it.dataset.asset;
+      saveState();
+      refreshQuoteDisplay();
+      renderAssetTabs();
+      renderDashboard();
+      list.classList.remove('show');
+    };
+  });
+  // Fechar ao clicar fora
+  document.addEventListener('click', () => list.classList.remove('show'), {once:true});
+}
+
+function populateAssetSelect(){
+  const sel = document.getElementById('op-asset');
+  if(!sel) return;
+  sel.innerHTML = ASSET_LIST.map(a =>
+    `<option value="${a}" ${a===state.activeAsset?'selected':''}>${ASSETS[a].icon} ${a} — ${ASSETS[a].name}</option>`
+  ).join('');
+}
+
+/* ============================================
+   THEME (dark/light toggle switch)
+============================================ */
+function applyTheme(){
+  document.documentElement.setAttribute('data-theme', state.theme);
+  const toggle = document.getElementById('toggle-theme');
+  if(toggle) toggle.classList.toggle('on', state.theme === 'light');
+}
+
+function toggleTheme(){
+  state.theme = state.theme === 'dark' ? 'light' : 'dark';
+  saveState();
+  applyTheme();
+  applyChartDefaults();
+  renderDashboard();
+}
+
+/* ============================================
+   FIAT SELECTOR (dropdown)
+============================================ */
+function applyFiat(){
+  const label = document.getElementById('fiat-label');
+  if(label) label.textContent = state.displayCurrency;
+  // Atualizar active nos options
+  document.querySelectorAll('.fiat-option').forEach(o => {
+    o.classList.toggle('active', o.dataset.currency === state.displayCurrency);
+  });
+}
+
+function setupFiatSelector(){
+  const btn = document.getElementById('fiat-btn');
+  const dropdown = document.getElementById('fiat-dropdown');
+  if(!btn || !dropdown) return;
+
+  btn.onclick = (e) => {
+    e.stopPropagation();
+    dropdown.classList.toggle('show');
+  };
+
+  dropdown.querySelectorAll('.fiat-option').forEach(opt => {
+    opt.onclick = () => {
+      state.displayCurrency = opt.dataset.currency;
+      saveState();
+      dropdown.classList.remove('show');
+      applyFiat();
+      refreshQuoteDisplay();
+      renderDashboard();
+      renderHistory();
+    };
+  });
+
+  // fechar ao clicar fora
+  document.addEventListener('click', () => dropdown.classList.remove('show'));
+}
+
+/* ============================================
+   NOTIFICATIONS (preço)
+============================================ */
+let notifPermission = 'default';
+let notifInterval = null;
+
+async function requestNotifPermission(){
+  if(!('Notification' in window)) return;
+  if(Notification.permission === 'granted'){ notifPermission = 'granted'; return; }
+  if(Notification.permission === 'denied'){ notifPermission = 'denied'; return; }
+  const perm = await Notification.requestPermission();
+  notifPermission = perm;
+}
+
+function startNotifChecker(){
+  if(notifInterval) clearInterval(notifInterval);
+  // Checar a cada 5 minutos
+  notifInterval = setInterval(() => {
+    if(notifPermission !== 'granted') return;
+    const p = computePortfolio();
+    if(p.netInvested <= 0) return;
+    if(state.alertProfit > 0 && p.unrealizedPct >= state.alertProfit){
+      new Notification('HOLD.tracker', {
+        body: `${state.activeAsset} em lucro de ${fmtPct(p.unrealizedPct)}! Alerta de +${state.alertProfit}% atingido.`,
+        icon: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%230e1117"/><text x="50" y="74" text-anchor="middle" font-size="72" fill="%23f7931a">₿</text></svg>',
+      });
+    }
+    if(state.alertLoss > 0 && p.unrealizedPct <= -state.alertLoss){
+      new Notification('HOLD.tracker', {
+        body: `${state.activeAsset} em prejuízo de ${fmtPct(p.unrealizedPct)}. Alerta de -${state.alertLoss}% atingido.`,
+        icon: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%230e1117"/><text x="50" y="74" text-anchor="middle" font-size="72" fill="%23f7931a">₿</text></svg>',
+      });
+    }
+  }, 5 * 60 * 1000);
+}
+
+/* ============================================
+   HELP / ONBOARDING
+============================================ */
+function openHelp(isOnboarding){
+  const title = document.getElementById('help-title');
+  const sub = document.getElementById('help-sub');
+  const btn = document.getElementById('help-got-it');
+  if(isOnboarding){
+    title.textContent = 'Bem-vindo ao HOLD.tracker';
+    sub.textContent = 'Um guia rápido pra você começar';
+    btn.textContent = 'Entendi, vamos começar';
+  } else {
+    title.textContent = 'Como usar o HOLD.tracker';
+    sub.textContent = 'Guia rápido das principais funções';
+    btn.textContent = 'Fechar';
+  }
+  document.getElementById('help-modal').classList.add('show');
+}
+
+function closeHelp(){
+  document.getElementById('help-modal').classList.remove('show');
+  if(!state.onboardingSeen){
+    state.onboardingSeen = true;
+    saveState();
+  }
+}
+
+function setupHelp(){
+  const fab = document.getElementById('help-fab');
+  fab.onclick = () => openHelp(false);
+  fab.style.display = 'flex';
+  document.getElementById('help-close').onclick = closeHelp;
+  document.getElementById('help-got-it').onclick = closeHelp;
+  document.getElementById('help-modal').addEventListener('click', e => {
+    if(e.target.id === 'help-modal') closeHelp();
+  });
+}
+
+function setupSettingsTabs(){
+  document.querySelectorAll('.settings-tab').forEach(tab => {
+    tab.onclick = () => {
+      const target = tab.dataset.spanel;
+      document.querySelectorAll('.settings-tab').forEach(t => t.classList.toggle('active', t === tab));
+      document.querySelectorAll('.settings-panel').forEach(p => p.classList.toggle('active', p.dataset.spanel === target));
+    };
+  });
+}
+
+/* ============================================
    INIT
 ============================================ */
 let appBooted = false;
@@ -3474,6 +4867,8 @@ function bootApp(){
   resetStateBeforeLoad();
   loadState();
   updateUserBox();
+  applyTheme();
+  applyFiat();
 
   if(!appBooted){
     loadSettingsUI();
@@ -3485,19 +4880,31 @@ function bootApp(){
     setupMobile();
     setupLayoutControls();
     document.getElementById('logout-btn').onclick = logout;
+    document.getElementById('toggle-theme').onclick = toggleTheme;
+    setupFiatSelector();
+    setupHelp();
+    setupSettingsTabs();
+    requestNotifPermission();
     appBooted = true;
   } else {
-    // re-ligar UI específica do estado (settings inputs etc.)
     loadSettingsUI();
   }
 
+  populateAssetSelect();
+  renderAssetTabs();
   autoCompute();
   showApp();
   renderAll();
   updateInstallUI();
   setupIdleTracker();
   resetIdleTimer();
-  if(!state.quote){ fetchQuote(); }
+  startNotifChecker();
+  startQuoteAutoRefresh();
+  if(!getQuote()){ fetchQuote(); }
+  // Mostrar onboarding pra contas novas
+  if(!state.onboardingSeen){
+    setTimeout(() => openHelp(true), 300);
+  }
 }
 
 function init(){
