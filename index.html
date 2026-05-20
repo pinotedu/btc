@@ -624,9 +624,11 @@
   }
 
   /* ==== MOBILE OVERHAUL ==== */
+  /* Defaults: esconder elementos mobile no desktop */
   .menu-toggle{display:none}
   .mobile-topbar{display:none}
   .bottom-nav{display:none}
+  .drawer-overlay{display:none}
 
   @media (max-width:980px){
     body{padding-bottom:64px} /* espaço pra bottom nav */
@@ -810,24 +812,24 @@
   </div>
 </div>
 
-<div class="app" id="app" style="display:none">
-
-  <!-- TOP BAR (só mobile) -->
-  <div class="mobile-topbar">
-    <button class="menu-toggle" id="mobile-menu-toggle" aria-label="Menu">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-    </button>
-    <div class="logo-mini">
-      <div class="icon">₿</div>
-      <span>HOLD<span style="color:var(--orange)">.</span>tracker</span>
-    </div>
-    <button class="menu-toggle" id="mobile-help-toggle" aria-label="Ajuda" style="visibility:hidden">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
-    </button>
+<!-- TOP BAR mobile (fora do grid pra não afetar layout desktop) -->
+<div class="mobile-topbar" id="mobile-topbar-el" style="display:none">
+  <button class="menu-toggle" id="mobile-menu-toggle" aria-label="Menu">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+  <div class="logo-mini">
+    <div class="icon">₿</div>
+    <span>HOLD<span style="color:var(--orange)">.</span>tracker</span>
   </div>
+  <button class="menu-toggle" id="mobile-help-toggle" aria-label="Ajuda" style="visibility:hidden">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
+  </button>
+</div>
 
-  <!-- Overlay do drawer mobile -->
-  <div class="drawer-overlay" id="drawer-overlay"></div>
+<!-- Overlay do drawer mobile -->
+<div class="drawer-overlay" id="drawer-overlay"></div>
+
+<div class="app" id="app" style="display:none">
 
   <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
@@ -1436,9 +1438,10 @@
     </section>
 
   </main>
+</div>
 
-  <!-- Bottom nav (só mobile) -->
-  <nav class="bottom-nav" id="bottom-nav">
+<!-- Bottom nav mobile (fora do .app pra não afetar grid desktop) -->
+<nav class="bottom-nav" id="bottom-nav" style="display:none">
     <button class="bottom-nav-item active" data-tab="dashboard">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
       <span>Dash</span>
@@ -1460,7 +1463,6 @@
       <span>Config</span>
     </button>
   </nav>
-</div>
 
 <!-- Modal Usuário (cadastro / alterar nome / alterar senha) -->
 <div class="modal-bg" id="user-modal">
@@ -1707,11 +1709,20 @@ function tryLogin(user, pass){
 function showLogin(){
   document.getElementById('login-screen').style.display = 'flex';
   document.getElementById('app').style.display = 'none';
+  const topbar = document.getElementById('mobile-topbar-el');
+  const bottomNav = document.getElementById('bottom-nav');
+  if(topbar) topbar.style.display = 'none';
+  if(bottomNav) bottomNav.style.display = 'none';
   setTimeout(() => document.getElementById('login-user').focus(), 50);
 }
 function showApp(){
   document.getElementById('login-screen').style.display = 'none';
   document.getElementById('app').style.display = '';
+  const topbar = document.getElementById('mobile-topbar-el');
+  const bottomNav = document.getElementById('bottom-nav');
+  // Só remove o display:none inline — CSS (@media) decide se mostra ou não
+  if(topbar) topbar.style.display = '';
+  if(bottomNav) bottomNav.style.display = '';
 }
 
 function setupLoginScreen(){
