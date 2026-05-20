@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
 <title>HOLD.tracker</title>
 <meta name="description" content="Tracker pessoal de Bitcoin (HOLD)">
 <meta name="theme-color" content="#f7931a">
@@ -614,35 +614,168 @@
   .widget-card-meta{font-size:10px;color:var(--text-mute);text-transform:uppercase;letter-spacing:.08em;margin-top:6px;display:flex;justify-content:space-between}
 
   @media (max-width:980px){
-    .widgets-grid{grid-template-columns:repeat(2,1fr)}
+    .widgets-grid{grid-template-columns:repeat(2,1fr);gap:10px}
     .widget.size-medium,.widget.size-large{grid-column:span 2}
     .widget-picker{grid-template-columns:1fr}
   }
-  @media (max-width:560px){
-    .widgets-grid{grid-template-columns:1fr}
+  @media (max-width:640px){
+    .widgets-grid{grid-template-columns:1fr;gap:10px}
     .widget.size-small,.widget.size-medium,.widget.size-large{grid-column:span 1}
   }
 
-  /* Mobile */
+  /* ==== MOBILE OVERHAUL ==== */
   .menu-toggle{display:none}
+  .mobile-topbar{display:none}
+  .bottom-nav{display:none}
+
   @media (max-width:980px){
+    body{padding-bottom:64px} /* espaço pra bottom nav */
     .app{grid-template-columns:1fr}
-    .sidebar{position:fixed;left:-260px;width:260px;z-index:40;transition:left .25s;height:100vh}
+
+    /* Sidebar vira drawer */
+    .sidebar{position:fixed;left:-280px;width:280px;z-index:1010;transition:left .25s ease;height:100vh;overflow-y:auto;box-shadow:4px 0 20px rgba(0,0,0,.3)}
     .sidebar.open{left:0}
-    .menu-toggle{display:grid;place-items:center;width:38px;height:38px;background:var(--panel);border:1px solid var(--border);border-radius:8px;cursor:pointer;color:var(--text)}
-    .cards{grid-template-columns:repeat(2,1fr)}
-    .form-grid{grid-template-columns:1fr 1fr}
-    .charts-grid{grid-template-columns:1fr}
-    .sale-grid{grid-template-columns:repeat(2,1fr)}
-    .settings-grid{grid-template-columns:1fr}
-    .ir-row{grid-template-columns:1fr 1fr;font-size:12px}
+
+    /* Overlay quando drawer abre */
+    .drawer-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1005}
+    .drawer-overlay.show{display:block}
+
+    /* Top bar mobile com logo + hamburguer */
+    .mobile-topbar{display:flex;position:sticky;top:0;left:0;right:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--border-soft);padding:10px 14px;align-items:center;justify-content:space-between;gap:10px;backdrop-filter:blur(8px)}
+    .mobile-topbar .logo-mini{display:flex;align-items:center;gap:8px;font-family:'Bricolage Grotesque';font-weight:700;font-size:16px}
+    .mobile-topbar .logo-mini .icon{width:28px;height:28px;background:linear-gradient(135deg,var(--orange),#d77a14);color:#fff;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:bold}
+    .menu-toggle{display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--bg-soft);border:1px solid var(--border);border-radius:9px;cursor:pointer;color:var(--text)}
+
+    /* Bottom nav fixa */
+    .bottom-nav{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--panel);border-top:1px solid var(--border);z-index:50;padding:6px 4px 8px;justify-content:space-around;backdrop-filter:blur(8px)}
+    .bottom-nav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 4px;background:transparent;border:none;color:var(--text-mute);cursor:pointer;font-family:inherit;font-size:10px;font-weight:600;border-radius:8px;transition:all .15s;min-height:50px}
+    .bottom-nav-item svg{width:20px;height:20px}
+    .bottom-nav-item.active{color:var(--orange)}
+    .bottom-nav-item:active{background:var(--bg-soft)}
+
+    /* Conteúdo principal */
+    .main{padding:14px 12px 20px}
+    .page-head{flex-direction:column;align-items:flex-start;gap:12px}
+    .page-head > div:first-child{width:100%}
+    .page-title{font-size:22px}
+    .page-sub{font-size:12.5px}
+
+    /* Quote bar mobile — full width abaixo */
+    .quote-bar{width:100%;flex-wrap:wrap;padding:10px 12px;gap:10px}
+    .quote-bar > div:first-child{flex:1;min-width:120px}
+    .quote-bar-label{font-size:9.5px}
+    .quote-bar-val{font-size:15px}
+    .quote-input{width:100%;font-size:14px}
+
+    /* Asset dropdown mobile */
+    .asset-dd-btn{min-width:0;width:100%;padding:9px 12px;font-size:13px}
+    .asset-dropdown{width:100%}
+
+    /* Form mobile */
+    .form-grid{grid-template-columns:1fr 1fr;gap:10px}
+    .field input,.field select,.field textarea{font-size:16px;padding:10px 12px} /* 16px evita zoom no iOS */
+    .field-hint{font-size:11px}
+    .type-toggle button{padding:11px 6px;font-size:12px}
+    .type-toggle button svg{display:none}
+
+    /* Tabelas viram cards no mobile */
+    .table-wrap{overflow-x:auto}
+    table{font-size:11.5px;min-width:600px}
+    table th,table td{padding:8px 6px}
+    .op-badge{padding:2px 6px;font-size:9.5px}
+
+    /* IR responsive */
+    .ir-row{grid-template-columns:1fr 1fr;font-size:11.5px;gap:6px}
     .ir-row > *:nth-child(n+3){grid-column:span 1}
-    .main{padding:18px}
+
+    /* Settings tabs - scrollable horizontal */
+    .settings-tabs{overflow-x:auto;-webkit-overflow-scrolling:touch}
+    .settings-tab{flex-shrink:0;padding:8px 13px;font-size:12px}
+
+    /* Charts heights menores */
+    .widget .widget-chart-wrap{height:200px;min-height:200px}
+    .pc-canvas-wrap{height:220px}
+
+    /* Modais full-screen no mobile */
+    .modal{max-width:none;width:100%;max-height:none;height:100vh;border-radius:0;padding:18px;overflow-y:auto}
+    .modal-bg{padding:0}
+    .modal-head{position:sticky;top:-18px;background:var(--panel);padding:14px 0;margin:-18px 0 14px;border-bottom:1px solid var(--border-soft);z-index:5}
+
+    /* Expanded widget modal */
+    .expanded-modal{padding:0}
+    .expanded-content{max-width:none;width:100%;max-height:100vh;height:100vh;border-radius:0;padding:18px;overflow-y:auto}
+    .pc-canvas-wrap.large{height:340px}
+
+    /* Help modal */
+    .help-modal{padding:0}
+    .help-content{max-width:none;width:100%;max-height:100vh;height:100vh;border-radius:0;padding:24px 18px}
+
+    /* Login responsive */
+    .login-screen{padding:14px}
+    .login-box{padding:24px 20px}
+
+    /* Help FAB sobe pra não cobrir bottom nav */
+    .help-fab{bottom:78px;right:14px;width:42px;height:42px}
+
+    /* Edit toolbar mobile */
+    .edit-toolbar{position:fixed;top:auto;bottom:64px;left:8px;right:8px;border-radius:10px;flex-direction:column;align-items:stretch;padding:10px 12px}
+    .edit-toolbar-info{justify-content:center;font-size:11.5px}
+    .edit-toolbar-actions{justify-content:center}
+    .edit-toolbar-actions .btn-mini{flex:1}
+
+    /* Section padding */
+    .section{padding:16px 14px}
+    .setting-block{padding:14px}
+
+    /* Dashboard tweaks */
+    .alert-box{padding:12px;font-size:12.5px;flex-direction:column;align-items:flex-start}
+    .alert-box svg{width:18px;height:18px}
+
+    /* Touch targets maiores */
+    .btn{padding:11px 16px;min-height:42px}
+    .btn-mini{padding:8px 12px;min-height:34px}
+    .icon-btn{width:38px;height:38px}
+
+    /* Sales/IR cards */
+    .sale-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+    .settings-grid{grid-template-columns:1fr;gap:10px}
+
+    /* Fiat dropdown */
+    .fiat-btn{padding:7px 10px;font-size:11.5px}
+
+    /* Esconder controles desktop-only quando em mobile */
+    .desktop-only{display:none !important}
   }
-  @media (max-width:560px){
-    .cards{grid-template-columns:1fr}
+
+  @media (max-width:480px){
     .form-grid{grid-template-columns:1fr}
-    .page-title{font-size:24px}
+    .sale-grid{grid-template-columns:1fr}
+    .ir-row{grid-template-columns:1fr;font-size:12px}
+    .ir-row > *{grid-column:span 1 !important}
+    .page-title{font-size:20px}
+    .mobile-topbar .logo-mini{font-size:14px}
+    .qstats{grid-template-columns:1fr}
+    .countdown{font-size:11px}
+    .pc-tf button{padding:5px 8px;font-size:11px}
+    .asset-dd-btn{font-size:12.5px}
+  }
+
+  /* Hide menu-toggle on desktop */
+  @media (min-width:981px){
+    .bottom-nav{display:none}
+    .mobile-topbar{display:none}
+  }
+
+  /* Safe areas pra iPhone com notch */
+  @media (max-width:980px){
+    .mobile-topbar{padding-top:max(10px, env(safe-area-inset-top))}
+    .bottom-nav{padding-bottom:max(8px, env(safe-area-inset-bottom))}
+    body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
+  }
+
+  /* Esconder menu-toggle interno (das page-heads) no mobile, já tem topbar */
+  @media (max-width:980px){
+    .page-head .menu-toggle{display:none}
   }
 </style>
 </head>
@@ -678,6 +811,23 @@
 </div>
 
 <div class="app" id="app" style="display:none">
+
+  <!-- TOP BAR (só mobile) -->
+  <div class="mobile-topbar">
+    <button class="menu-toggle" id="mobile-menu-toggle" aria-label="Menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <div class="logo-mini">
+      <div class="icon">₿</div>
+      <span>HOLD<span style="color:var(--orange)">.</span>tracker</span>
+    </div>
+    <button class="menu-toggle" id="mobile-help-toggle" aria-label="Ajuda" style="visibility:hidden">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
+    </button>
+  </div>
+
+  <!-- Overlay do drawer mobile -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
 
   <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
@@ -1286,6 +1436,30 @@
     </section>
 
   </main>
+
+  <!-- Bottom nav (só mobile) -->
+  <nav class="bottom-nav" id="bottom-nav">
+    <button class="bottom-nav-item active" data-tab="dashboard">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      <span>Dash</span>
+    </button>
+    <button class="bottom-nav-item" data-tab="new-op">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>
+      <span>Nova</span>
+    </button>
+    <button class="bottom-nav-item" data-tab="history">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      <span>Hist.</span>
+    </button>
+    <button class="bottom-nav-item" data-tab="sales">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+      <span>Vendas</span>
+    </button>
+    <button class="bottom-nav-item" data-tab="settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      <span>Config</span>
+    </button>
+  </nav>
 </div>
 
 <!-- Modal Usuário (cadastro / alterar nome / alterar senha) -->
@@ -4480,6 +4654,12 @@ function switchTab(tab){
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.toggle('active', n.dataset.tab===tab));
   document.querySelectorAll('.tab-content').forEach(c=>c.classList.toggle('active', c.dataset.tab===tab));
   document.getElementById('sidebar').classList.remove('open');
+  const overlay = document.getElementById('drawer-overlay');
+  if(overlay) overlay.classList.remove('show');
+  // Atualizar bottom nav
+  document.querySelectorAll('.bottom-nav-item').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.tab === tab);
+  });
   window.scrollTo(0,0);
 }
 
@@ -4577,8 +4757,46 @@ function setupQuote(){
    MOBILE
 ============================================ */
 function setupMobile(){
-  const toggle = ()=>document.getElementById('sidebar').classList.toggle('open');
-  document.querySelectorAll('#menu-toggle, [data-mtg]').forEach(b=>b.onclick=toggle);
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('drawer-overlay');
+  const openDrawer = () => {
+    sidebar.classList.add('open');
+    overlay.classList.add('show');
+  };
+  const closeDrawer = () => {
+    sidebar.classList.remove('open');
+    overlay.classList.remove('show');
+  };
+
+  // Botões que abrem o drawer
+  const mobileToggle = document.getElementById('mobile-menu-toggle');
+  if(mobileToggle) mobileToggle.onclick = openDrawer;
+  document.querySelectorAll('[data-mtg]').forEach(b => b.onclick = openDrawer);
+
+  // Overlay fecha drawer
+  overlay.onclick = closeDrawer;
+
+  // Clicar em item da nav fecha drawer (no mobile)
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', closeDrawer);
+  });
+
+  // Bottom nav
+  document.querySelectorAll('.bottom-nav-item').forEach(btn => {
+    btn.onclick = () => {
+      const tab = btn.dataset.tab;
+      switchTab(tab);
+    };
+  });
+
+  // Sincronizar bottom nav com tab ativa
+  updateBottomNav();
+}
+
+function updateBottomNav(){
+  document.querySelectorAll('.bottom-nav-item').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.tab === state.currentTab);
+  });
 }
 
 /* ============================================
